@@ -1,0 +1,27 @@
+{
+  "name": "rezistor-uchun-kalkulyator",
+  "version": "1.0.0",
+  "description": "Qarshilikni o‘lchash uchun veb ilova. Rezistorning liniyasining  ranglariga qarab uning qarshiligini aniqlash uchun foydalaniladi.",
+  "homepage": "https://github.com/RasulXaydarov/Rezistor-kalkulyator#readme",
+  "bugs": {
+    "url": "https://github.com/RasulXaydarov/Rezistor-kalkulyator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RasulXaydarov/Rezistor-kalkulyator.git"
+  },
+  "license": "MIT",
+  "author": "Rasul Haydarov",
+  "type": "commonjs",
+  "main": "index.js",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html"
+  },
+  "dependencies": {
+    "parcel": "^2.16.3"
+  }
+}
