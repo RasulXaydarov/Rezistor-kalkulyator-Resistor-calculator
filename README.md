@@ -1,2 +1,2 @@
 # Rezistor-kalkulyator
-The web application for calculating resistor. The resistor we can calculate according to its colored lines.
+The web application for calculating resistor. The  we can calculate resistor according to its colored lines.
