@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #fefae9;
+    font-size: 2.5rem;
+}
+
+/* 
+
+Font-sizes 
+
+10/16/20/25/32/40/51/64
+
+COLORS
+
+#f9ca24
+
+f9ca24
+Tints:
+#fefae9
+
+Shades:
+
+
+
+*/
+nav {
+    display: flex;
+}
+
+nav a:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.2rem;
+}
+
+nav img {
+    height: auto;
+    max-width: 7rem;
+}
