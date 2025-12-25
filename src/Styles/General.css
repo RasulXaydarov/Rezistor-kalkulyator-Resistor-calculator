@@ -147,5 +147,5 @@ section form {
     display: flex;
     width: 60rem;
     justify-content: space-between;
-    transform: translateY(-3rem);
+    transform: translateY(-4rem);
 }
