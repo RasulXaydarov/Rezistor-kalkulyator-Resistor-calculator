@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qarshilik–rezistorni o‘lchaydigan kalkulyator</title>
     <link rel="stylesheet" href="./src/Styles/General.css">
+    <script type="module" src="./src/Scripts/control.js"></script>
 </head>
 
 <body>
     <header class="container">
-        <nav><a href="#"><img src="./src/Images/Logo.svg">Qarshilik</a></nav>
+        <nav><a href="#"><img src="./src/Images/Logo.svg">Qarshilik</a><a href="#how-to">Foydalanish usuli</a><a
+                href="#resistor-calculator">Qarshilik kalkulyatori</a></nav>
         <h1>Resistor liniyalarining rangini tanlang va qarshiligini toping.</h1>
     </header>
     <main>
-        <section class="container">
+        <section class="container" id="how-to">
             <aside>
                 <h2>Qanday qilib resistorning qarshiligi topiladi.</h2>
                 <p>Siz rezistorning qarshiligini topish uchun yo to‘rtburchak shakldagi rangli qismni bosishingiz kerak,
@@ -29,8 +31,14 @@
                 <figcaption>Rezistorning liniyasining ranglari</figcaption>
             </figure>
         </section>
-        <section class="container">
+        <section class="container" id="resistor-calculator">
             <h2>Qarshilikni o‘lchaydigan kalkulyator</h2>
+            <rectangle class="line-1"></rectangle>
+            <rectangle class="line-2"></rectangle>
+            <rectangle class="line-3"></rectangle>
+            <rectangle class="line-4"></rectangle>
+            <rectangle class="line-5"></rectangle>
+            <rectangle class="line-6"></rectangle>
             <picture><img src="./src/Images/Resistor.png" alt="Rezistorni o‘lchaydigan kalkulyatorning rasmi"></picture>
             <form><input type="color" list="colors"><input type="color" list="colors"><input type="color"
                     list="colors"><input type="color" list="colors"><input type="color" list="colors"><input
@@ -49,6 +57,7 @@
                     <option value="Gold"></option>
                     <option value="Silver"></option>
                 </datalist>
+                <button>Qarshilik hisoblamoq</button>
             </form>
         </section>
     </main>
