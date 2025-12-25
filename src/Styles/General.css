@@ -81,7 +81,7 @@ a:visited {
 }
 
 a:hover,
-a:action {
+a:active {
     color: #f9ca24;
     transition: all 0.3s ease;
 }
@@ -141,4 +141,11 @@ section:nth-child(2) {
 
 section:nth-child(2) picture img {
     max-width: 60rem;
+}
+
+section form {
+    display: flex;
+    width: 60rem;
+    justify-content: space-between;
+    transform: translateY(-3rem);
 }
