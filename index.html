@@ -19,13 +19,11 @@
         <section class="container" id="how-to">
             <aside>
                 <h2>Qanday qilib resistorning qarshiligi topiladi.</h2>
-                <p>Siz rezistorning qarshiligini topish uchun yo to‘rtburchak shakldagi rangli qismni bosishingiz kerak,
-                    yo rangli liniyalardan birini tanlashingiz kerak. Rangli liniyani tanlab uni sichqonchaning chap
-                    tugmasini bosganingizdan keyin ranglardan birini tanlashingiz kerak. Siz faqat quyiroqdagi
+                <p>Siz rezistorning qarshiligini topish uchun yo to‘rtburchak shakldagi rangli qismni bosishingiz
+                    kerak, yo rangli liniyalardan birini tanlashingiz kerak. Rangli liniyani tanlab uni sichqonchaning
+                    chap tugmasini bosganingizdan keyin ranglardan birini tanlashingiz kerak. Siz faqat quyiroqdagi
                     qo‘shimcha ranglarni tanlashingiz mumkin.</p>
-
             </aside>
-
             <figure><img src="./src/Images/ColorPicker.png"
                     alt="Ranglardan qaysi rangni tanlsh kerakligi ko‘rsatilgan.">
                 <figcaption>Rezistorning liniyasining ranglari</figcaption>
@@ -40,10 +38,25 @@
             <rectangle class="line-5"></rectangle>
             <rectangle class="line-6"></rectangle>
             <picture><img src="./src/Images/Resistor.png" alt="Rezistorni o‘lchaydigan kalkulyatorning rasmi"></picture>
-            <form><input type="color" list="colors"><input type="color" list="colors"><input type="color"
-                    list="colors"><input type="color" list="colors"><input type="color" list="colors"><input
-                    type="color" list="colors">
-                <datalist id="colors">
+            <form>
+                <input type="color" list="three-lines">
+                <input type="color" list="three-lines">
+                <input type="color" list="three-lines">
+                <input type="color" list="number-zero">
+                <input type="color" list="mistake">
+                <input type="color" list="temperature">
+                <datalist id="three-lines">
+                    <option value="Brown"></option>
+                    <option value="Red"></option>
+                    <option value="Orange"></option>
+                    <option value="Yellow"></option>
+                    <option value="Green"></option>
+                    <option value="Blue"></option>
+                    <option value="Purple"></option>
+                    <option value="Grey"></option>
+                    <option value="White"></option>
+                </datalist>
+                <datalist id="number-zero">
                     <option value="Black"></option>
                     <option value="Brown"></option>
                     <option value="Red"></option>
@@ -56,6 +69,26 @@
                     <option value="White"></option>
                     <option value="Gold"></option>
                     <option value="Silver"></option>
+                </datalist>
+                <datalist id="mistake">
+                    <option value="Brown"></option>
+                    <option value="Red"></option>
+                    <option value="Orange"></option>
+                    <option value="Yellow"></option>
+                    <option value="Green"></option>
+                    <option value="Blue"></option>
+                    <option value="Purple"></option>
+                    <option value="Grey"></option>
+                    <option value="Gold"></option>
+                    <option value="Silver"></option>
+                </datalist>
+                <datalist id="temperature">
+                    <option value="Brown"></option>
+                    <option value="Red"></option>
+                    <option value="Orange"></option>
+                    <option value="Yellow"></option>
+                    <option value="Blue"></option>
+                    <option value="Purple"></option>
                 </datalist>
                 <button>Qarshilik hisoblamoq</button>
             </form>

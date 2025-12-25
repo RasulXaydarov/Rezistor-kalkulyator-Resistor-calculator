@@ -53,6 +53,8 @@ Spacing system(px)
 0.8rem
 1.2rem
 4px
+1.6rem
+2.4rem
 
 
 
@@ -177,6 +179,11 @@ form button:active {
 
 input {
     cursor: pointer;
+    appearance: none;
+    background-color: blue;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.445);
+    border: none;
 }
 
 section:nth-child(2) {
