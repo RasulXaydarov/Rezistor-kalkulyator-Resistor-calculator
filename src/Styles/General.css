@@ -264,13 +264,27 @@ section:nth-child(2) {
     cursor: pointer;
 }
 
+
+
 dialog {
-    position: absolute;
-    top: 60rem;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 3.2rem;
-    border: 3px #f9ca24 solid;
+    outline: 3px solid #f9ca24;
+    border: none;
     border-radius: 8px;
     color: #322807;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.459);
+    margin: 0 auto;
+    z-index: 40;
+}
+
+footer a {
+    display: flex;
+    align-items: center;
+    font-size: 3.2rem;
+    gap: 4px;
+    margin-right: auto;
+}
+
+footer a img {
+    max-width: 7rem;
 }
