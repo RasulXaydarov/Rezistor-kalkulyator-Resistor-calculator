@@ -126,9 +126,6 @@ section aside {
 }
 
 section figure {
-    /* align-self: center;
-    display: flex;
-    align-items: center; */
     max-width: 54.3rem;
 }
 
@@ -268,7 +265,7 @@ section:nth-child(2) {
 
 dialog {
     padding: 3.2rem;
-    outline: 3px solid #f9ca24;
+    outline: 3px double #f9ca24;
     border: none;
     border-radius: 8px;
     color: #322807;
@@ -277,14 +274,31 @@ dialog {
     z-index: 40;
 }
 
+hr {
+    width: calc(100vw - 6.4rem);
+    margin: 0 auto;
+    color: #333;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem;
+
+}
+
 footer a {
     display: flex;
     align-items: center;
     font-size: 3.2rem;
     gap: 4px;
-    margin-right: auto;
 }
 
 footer a img {
     max-width: 7rem;
+}
+
+footer small {
+    margin: 0 auto;
+    font-size: 1.6rem;
 }
