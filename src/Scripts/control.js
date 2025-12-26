@@ -1,4 +1,4 @@
-import ResistorCalculator from "./ResistorCalculatorView";
+import ResistorCalculator from "./Views/resistorCalculatorView";
 
 let dialog = document.querySelector("dialog");
 dialog.show();
