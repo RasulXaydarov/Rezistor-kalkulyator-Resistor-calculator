@@ -32,6 +32,9 @@ Font-sizes
 
 10/16/20/25/32/40/51/64
 
+2.5rem
+5.1rem
+
 COLORS
 
 #f9ca24
@@ -70,7 +73,7 @@ nav {
     gap: 1.6rem;
 }
 
-nav a:first-child {
+nav a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,6 +98,21 @@ nav img {
     height: auto;
     max-width: 7rem;
 }
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 1.6rem;
+}
+
+nav ul a {
+    display: inline-block;
+    font-size: inherit;
+    margin: inherit;
+}
+
 
 h1 {
     font-size: 5.1rem;
@@ -260,8 +278,6 @@ section:nth-child(2) {
     z-index: 30;
     cursor: pointer;
 }
-
-
 
 dialog {
     padding: 3.2rem;

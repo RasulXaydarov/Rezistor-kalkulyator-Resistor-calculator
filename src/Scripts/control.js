@@ -4,7 +4,8 @@ dialog.show();
 async function controlResistorCalculator() {
     let resistorCalculator = new ResistorCalculator();
     resistorCalculator.renderResistorCalculator();
-}
+};
+
 
 function init() {
     controlResistorCalculator();

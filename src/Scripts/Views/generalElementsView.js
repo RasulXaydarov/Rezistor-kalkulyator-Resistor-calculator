@@ -1,9 +1,13 @@
-import Navigation from "./navigationView";
+import { Navigation } from "./navigationView";
 let navigation = new Navigation();
 
-class Generalelements {
+class GeneralElements {
     renderGeneralElements() {
         navigation.renderNavigation();
     }
+    addScrollBehavior() {
+        navigation.addScrollBehaviorToTheNavigation();
+    }
 }
-export default Generalelements;
+
+export default GeneralElements;

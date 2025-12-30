@@ -2,6 +2,7 @@ import GeneralElements from "./generalElementsView";
 import colorsImage from "url:../../Images/ColorPicker.png" with {type: "image/png"};
 let horizontalRule = document.querySelector("hr");
 
+
 const generalElements = new GeneralElements();
 class ResistorCalculator {
     #header = document.querySelector("header");
@@ -33,6 +34,7 @@ class ResistorCalculator {
         generalElements.renderGeneralElements();
         this.addTitleToTheHero();
         this.#addSectionHowToUse();
+        generalElements.addScrollBehavior();
         this.setAttributeOfTheHR();
     }
 }
