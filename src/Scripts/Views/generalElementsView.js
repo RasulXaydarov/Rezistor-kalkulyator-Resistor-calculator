@@ -1,12 +1,17 @@
 import { Navigation } from "./navigationView";
-let navigation = new Navigation();
+import FooterView from "./footerView";
 
 class GeneralElements {
+    #navigation;
     renderGeneralElements() {
+        let navigation = new Navigation();
+        this.#navigation = navigation
+        let footer = new FooterView();
         navigation.renderNavigation();
+        footer.renderFooter();
     }
     addScrollBehavior() {
-        navigation.addScrollBehaviorToTheNavigation();
+        this.#navigation.addScrollBehaviorToTheNavigation();
     }
 }
 
