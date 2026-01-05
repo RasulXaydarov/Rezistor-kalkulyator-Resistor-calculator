@@ -10,6 +10,8 @@ class ResistorCalculator {
     #parentElement = document.querySelector("main");
     #horizontalRule;
     #dialog;
+    #countTheResistorButton;
+    _data;
     setAttributeOfTheHR() {
         this.#horizontalRule = document.querySelector("hr");
         this.#horizontalRule.setAttribute("noshade", "");
@@ -110,6 +112,17 @@ class ResistorCalculator {
         const horizontalRule = document.createElement("hr");
         this.#parentElement.append(horizontalRule);
     }
+    #getColorsOfTheInput() {
+        // let button
+        this.#countTheResistorButton = document.querySelector("section form button");
+        let form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            this._data = e.explicitOriginalTarget.elements;
+            this._data = Array.from(this._data);
+            console.log(this._data);
+        });
+    }
     renderResistorCalculator() {
         generalElements.renderGeneralElements();
         this.addTitleToTheHero();
@@ -119,6 +132,7 @@ class ResistorCalculator {
         this.#addHorizontalLine();
         generalElements.addScrollBehavior();
         this.setAttributeOfTheHR();
+        this.#getColorsOfTheInput();
     }
 }
 
