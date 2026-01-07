@@ -8,7 +8,6 @@ async function controlResistorCalculator() {
 
 };
 
-
 function init() {
     controlResistorCalculator();
 }

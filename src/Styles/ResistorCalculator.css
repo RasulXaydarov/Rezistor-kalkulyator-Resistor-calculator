@@ -118,7 +118,7 @@ section:nth-child(2) {
 
 .line-3 {
     position: absolute;
-    left: 62.6rem;
+    left: 61.6rem;
     top: 16.5rem;
     background-color: brown;
     width: 2.1rem;
@@ -130,7 +130,7 @@ section:nth-child(2) {
 
 .line-4 {
     position: absolute;
-    left: 76.2rem;
+    left: 65.4rem;
     top: 16.5rem;
     background-color: blue;
     width: 2.1rem;
@@ -142,11 +142,11 @@ section:nth-child(2) {
 
 .line-5 {
     position: absolute;
-    left: 85rem;
-    top: 13.3rem;
+    left: 76.2rem;
+    top: 16.5rem;
     background-color: orange;
     width: 2.1rem;
-    height: 17.6rem;
+    height: 11.2rem;
     z-index: 30;
     cursor: pointer;
 }
@@ -154,7 +154,7 @@ section:nth-child(2) {
 .line-6 {
     position: absolute;
     position: absolute;
-    left: 88.2rem;
+    left: 85rem;
     top: 13.3rem;
     background-color: red;
     width: 2.1rem;

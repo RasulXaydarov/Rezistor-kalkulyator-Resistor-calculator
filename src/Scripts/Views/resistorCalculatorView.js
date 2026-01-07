@@ -11,6 +11,7 @@ class ResistorCalculator {
     #horizontalRule;
     #dialog;
     #countTheResistorButton;
+    #resistorColors;
     _data;
     setAttributeOfTheHR() {
         this.#horizontalRule = document.querySelector("hr");
@@ -122,6 +123,16 @@ class ResistorCalculator {
             this._data = Array.from(this._data);
             console.log(this._data);
         });
+    }
+    #setTheColorsIntoTheObject() {
+        this.#resistorColors = {
+            theFirstLine: 0,
+            theSecondLine: 0,
+            theThirdLine: 0,
+            theNumberOfZero: 0,
+            thePossibleMistake: 0,
+            theCoefficientOfTheTemperature: 0,
+        }
     }
     renderResistorCalculator() {
         generalElements.renderGeneralElements();
