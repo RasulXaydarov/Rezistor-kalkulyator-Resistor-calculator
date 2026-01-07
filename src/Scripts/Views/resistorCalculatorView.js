@@ -3,6 +3,48 @@ import colorsImage from "url:../../Images/ColorPicker.png" with {type: "image/pn
 import resistorImage from "url:../../Images/Resistor.png" with {type: "image/png"};
 // let horizontalRule = document.querySelector("hr");
 
+function changeTheColorToTheNamedColor(color) {
+    let namedColor;
+    switch (color) {
+        case "#000000":
+            namedColor = "Black";
+            break;
+        case "#a52a2a":
+            namedColor = "Brown";
+            break;
+        case "#ff0000":
+            namedColor = "Red";
+            break;
+        case "#ffa500":
+            namedColor = "Orange";
+            break;
+        case "#ffff00":
+            namedColor = "Yellow";
+            break;
+        case "#008000":
+            namedColor = "Green";
+            break;
+        case "#0000ff":
+            namedColor = "Blue";
+            break;
+        case "#800080":
+            namedColor = "Purple";
+            break;
+        case "#808080":
+            namedColor = "Gray";
+            break;
+        case "#ffffff":
+            namedColor = "White";
+            break;
+        case "#ffd700":
+            namedColor = "Gold";
+            break;
+        case "#c0c0c0":
+            namedColor = "Silver";
+            break;
+    }
+    return namedColor;
+};
 
 const generalElements = new GeneralElements();
 class ResistorCalculator {
@@ -11,7 +53,9 @@ class ResistorCalculator {
     #horizontalRule;
     #dialog;
     #countTheResistorButton;
-    #resistorColors;
+    _resistorColors = {
+
+    }
     _data;
     setAttributeOfTheHR() {
         this.#horizontalRule = document.querySelector("hr");
@@ -113,6 +157,48 @@ class ResistorCalculator {
         const horizontalRule = document.createElement("hr");
         this.#parentElement.append(horizontalRule);
     }
+    changeTheColorToTheNamedColor(color) {
+        let namedColor;
+        switch (color) {
+            case "#000000":
+                namedColor = "Black";
+                break;
+            case "#a52a2a":
+                namedColor = "Brown";
+                break;
+            case "#ff0000":
+                namedColor = "Red";
+                break;
+            case "#ffa500":
+                namedColor = "Orange";
+                break;
+            case "#ffff00":
+                namedColor = "Yellow";
+                break;
+            case "#008000":
+                namedColor = "Green";
+                break;
+            case "#0000ff":
+                namedColor = "Blue";
+                break;
+            case "#800080":
+                namedColor = "Purple";
+                break;
+            case "#808080":
+                namedColor = "Gray";
+                break;
+            case "#ffffff":
+                namedColor = "White";
+                break;
+            case "#ffd700":
+                namedColor = "Gold";
+                break;
+            case "#c0c0c0":
+                namedColor = "Silver";
+                break;
+        }
+        return namedColor;
+    }
     #getColorsOfTheInput() {
         // let button
         this.#countTheResistorButton = document.querySelector("section form button");
@@ -121,19 +207,44 @@ class ResistorCalculator {
             e.preventDefault();
             this._data = e.explicitOriginalTarget.elements;
             this._data = Array.from(this._data);
-            console.log(this._data);
+            this._data = this._data.slice(0, -1);
+            this._resistorColors = {
+                theFirstLine: {
+                    color: changeTheColorToTheNamedColor(this._data[0].value),
+                },
+                theSecondLine: {
+                    color: changeTheColorToTheNamedColor(this._data[1].value),
+                },
+                theThirdLine: {
+                    color: changeTheColorToTheNamedColor(this._data[2].value),
+                },
+                theNumberOfZero: {
+                    color: changeTheColorToTheNamedColor(this._data[3].value),
+                },
+                thePossibleMistake: {
+                    color: changeTheColorToTheNamedColor(this._data[4].value),
+                },
+                theCoefficientOfTheTemperature: {
+                    color: changeTheColorToTheNamedColor(this._data[5].value),
+                },
+            }
+            console.log(this._resistorColors);
         });
+        return this._data;
+        // this._data = data;
     }
-    #setTheColorsIntoTheObject() {
-        this.#resistorColors = {
-            theFirstLine: 0,
-            theSecondLine: 0,
-            theThirdLine: 0,
-            theNumberOfZero: 0,
-            thePossibleMistake: 0,
-            theCoefficientOfTheTemperature: 0,
-        }
-    }
+
+    /* 
+    1) Add the data to the object
+    2)Calculate the resistance 
+    3) The resistor can have three lines, four lines, five lines or six lines. We should calculate for any any type of the resistor
+    
+    1) Take the array data and set the data into the object;
+    2) Change the value of the color with ternary operator
+
+
+    */
+
     renderResistorCalculator() {
         generalElements.renderGeneralElements();
         this.addTitleToTheHero();
