@@ -23,6 +23,7 @@
     "build": "parcel build index.html --dist-dir ./dist"
   },
   "dependencies": {
+    "@eastdesire/jscolor": "^2.5.2",
     "parcel": "^2.16.3"
   }
 }

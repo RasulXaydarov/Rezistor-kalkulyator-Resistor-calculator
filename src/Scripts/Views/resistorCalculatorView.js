@@ -92,12 +92,12 @@ class ResistorCalculator {
             <rectangle class="line-6"></rectangle>
             <picture><img src="${resistorImage}" alt="Rezistorni o‘lchaydigan kalkulyatorning rasmi"></picture>
             <form>
-                <input type="color" list="three-lines">
-                <input type="color" list="three-lines">
-                <input type="color" list="three-lines">
-                <input type="color" list="number-zero">
-                <input type="color" list="mistake">
-                <input type="color" list="temperature">
+                <button data-jscolor="{preset:'threeLines'}"></button>
+                <button data-jscolor="{preset:'threeLines'}"></button>
+                <button data-jscolor="{preset:'threeLines'}"></button>
+                <button data-jscolor="{preset:'numberOfZeros'}"></button>
+                <button data-jscolor="{preset: 'mistake'}"></button>
+                <button data-jscolor="{preset:'theCoeffitientOfTheTemperature'}"></button>
                 <datalist id="three-lines">
                     <option value="Brown"></option>
                     <option value="Red"></option>
@@ -229,6 +229,7 @@ class ResistorCalculator {
                 },
             }
             console.log(this._resistorColors);
+
         });
         return this._data;
         // this._data = data;

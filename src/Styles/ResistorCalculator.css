@@ -56,7 +56,17 @@ section form {
     gap: 2.4rem;
 }
 
-form button {
+form button:nth-child(1),
+form button:nth-child(2),
+form button:nth-child(3),
+form button:nth-child(4),
+form button:nth-child(5),
+form button:nth-child(6) {
+    /* border-radius: 4px; */
+    cursor: pointer;
+}
+
+form button:last-child {
     padding: 0.8rem 1.6rem;
     font-family: inherit;
     cursor: pointer;
@@ -67,7 +77,7 @@ form button {
     font-size: inherit;
 }
 
-form button:hover {
+form button:last-child:hover {
     color: #322807;
     transition: color 0.3s ease-in;
 }
