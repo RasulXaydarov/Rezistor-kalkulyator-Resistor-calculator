@@ -54,9 +54,9 @@ class ResistorCalculator {
     #dialog;
     #countTheResistorButton;
     _resistorColors = {
-
-    }
+    };
     _data;
+    lines;
     setAttributeOfTheHR() {
         this.#horizontalRule = document.querySelector("hr");
         this.#horizontalRule.setAttribute("noshade", "");
@@ -92,12 +92,12 @@ class ResistorCalculator {
             <rectangle class="line-6"></rectangle>
             <picture><img src="${resistorImage}" alt="Rezistorni o‘lchaydigan kalkulyatorning rasmi"></picture>
             <form>
-                <button data-jscolor="{preset:'threeLines'}"></button>
-                <button data-jscolor="{preset:'threeLines'}"></button>
-                <button data-jscolor="{preset:'threeLines'}"></button>
-                <button data-jscolor="{preset:'numberOfZeros'}"></button>
-                <button data-jscolor="{preset: 'mistake'}"></button>
-                <button data-jscolor="{preset:'theCoeffitientOfTheTemperature'}"></button>
+                <button data-jscolor="{preset:'threeLines', onChange: 'change(this)'}" data-color="color-1"></button>
+                <button data-jscolor="{preset:'threeLines', onChange: 'change(this)'}" data-color="color-2"></button>
+                <button data-jscolor="{preset:'threeLines', onChange: 'change(this)'}" data-color="color-3"></button>
+                <button data-jscolor="{preset:'numberOfZeros', onChange: 'change(this)'}" data-color="color-4"></button>
+                <button data-jscolor="{preset: 'mistake', onChange: 'change(this)'}" data-color="color-5"></button>
+                <button data-jscolor="{preset:'theCoeffitientOfTheTemperature', onChange: 'change(this)'}}" data-color="color-6"></button>
                 <datalist id="three-lines">
                     <option value="Brown"></option>
                     <option value="Red"></option>
@@ -234,6 +234,29 @@ class ResistorCalculator {
         return this._data;
         // this._data = data;
     }
+    changeThecolorOfTheLines() {
+        this.lines = document.querySelectorAll("rectangle");
+        this.lines = Array.from(this.lines);
+        let color;
+        let buttonColor;
+        let section = document.querySelector("section:nth-child(2)");
+        section.addEventListener("click", function (e) {
+            e.preventDefault();
+            let line = e.target;
+            if (line.tagName !== "RECTANGLE") return;
+            line.addEventListener("click", function (e) {
+                e.preventDefault();
+                let numberLine, numberColorPicker;
+                numberLine = line.className.slice(5);
+                buttonColor = document.querySelector(`form button[data-color="color-${numberLine}"]`);
+                buttonColor.jscolor.show();
+                let dataColor = buttonColor.attributes[1].nodeValue;
+                numberColorPicker = dataColor.slice(6);
+                color = buttonColor.dataset.currentColor;
+            });
+            line.click();
+        });
+    }
 
     /* 
     1) Add the data to the object
@@ -241,7 +264,7 @@ class ResistorCalculator {
     3) The resistor can have three lines, four lines, five lines or six lines. We should calculate for any any type of the resistor
     
     1) Take the array data and set the data into the object;
-    2) Change the value of the color with ternary operator
+    2) Change the value of the color with function
 
 
     */
@@ -256,6 +279,7 @@ class ResistorCalculator {
         generalElements.addScrollBehavior();
         this.setAttributeOfTheHR();
         this.#getColorsOfTheInput();
+        this.changeThecolorOfTheLines();
     }
 }
 
