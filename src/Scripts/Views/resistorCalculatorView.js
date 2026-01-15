@@ -97,7 +97,7 @@ class ResistorCalculator {
                 <button data-jscolor="{preset:'threeLines', onChange: 'change(this)'}" data-color="color-3"></button>
                 <button data-jscolor="{preset:'numberOfZeros', onChange: 'change(this)'}" data-color="color-4"></button>
                 <button data-jscolor="{preset: 'mistake', onChange: 'change(this)'}" data-color="color-5"></button>
-                <button data-jscolor="{preset:'theCoeffitientOfTheTemperature', onChange: 'change(this)'}}" data-color="color-6"></button>
+                <button data-jscolor="{preset:'theCoeffitientOfTheTemperature', onChange: 'change(this)'}" data-color="color-6"></button>
                 <datalist id="three-lines">
                     <option value="Brown"></option>
                     <option value="Red"></option>
