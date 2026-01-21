@@ -138,7 +138,7 @@ class ResistorCalculator {
             </figure>
         </section>`;
         this.#parentElement.insertAdjacentHTML("afterbegin", html);
-    } ch
+    }
     #addResistorCalculatorSection() {
         const html = `<section class="container" id="resistor-calculator">
             <h2>Qarshilikni o‘lchaydigan kalkulyator</h2>
