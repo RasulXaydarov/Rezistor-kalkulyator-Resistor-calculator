@@ -99,7 +99,7 @@ class ResistorCalculator {
         gray: null,
         white: null,
         gold: null,
-        silver: "Mavjud emas"
+        silver: null
     }
     _dataForColorsOfTheResistor;
     constructor() {
