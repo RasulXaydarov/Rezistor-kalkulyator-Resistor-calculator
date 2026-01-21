@@ -68,13 +68,13 @@ class ResistorCalculator {
         purple: 7,
         gray: 8,
         white: 9,
-        gold: "Mavjud emas",
-        silver: "Mavjud emas"
+        gold: null,
+        silver: null
     };
     theListOfTheResistanceForTheFirstLine = structuredClone(this.theListOfTheResistance);
     theListForNumberOfZero = structuredClone(this.theListOfTheResistance);
     thePossibleMistake = {
-        black: "Mavjud emas",
+        black: null,
         brown: "±1%",
         red: "±2%",
         orange: "±3%",
@@ -83,11 +83,24 @@ class ResistorCalculator {
         blue: "±0.25%",
         purple: "±0.1%",
         gray: "±0.05%",
-        white: "Mavjud emas",
+        white: null,
         gold: "±5%",
         silver: "±10%"
     }
-
+    theCoefficientOfTheTemperature = {
+        black: null,
+        brown: 100,
+        red: 50,
+        orange: 15,
+        yellow: 25,
+        green: null,
+        blue: 10,
+        purple: 5,
+        gray: null,
+        white: null,
+        gold: null,
+        silver: "Mavjud emas"
+    }
     _dataForColorsOfTheResistor;
     constructor() {
         this.theListOfTheResistanceForTheFirstLine.black = "";
@@ -99,8 +112,8 @@ class ResistorCalculator {
             theThirdLine: this.theListOfTheResistance,
             theNumberOfZero: this.theListForNumberOfZero,
             thePossibleMistake: this.thePossibleMistake,
-            theCoefficientOfTheTemperature: { colors: "", numbers: "" },
-        };
+            theCoefficientOfTheTemperature: this.theCoefficientOfTheTemperature
+        }
     }
     setAttributeOfTheHR() {
         this.#horizontalRule = document.querySelector("hr");
@@ -116,8 +129,8 @@ class ResistorCalculator {
                 <h2>Qanday qilib resistorning qarshiligi topiladi.</h2>
                 <p>Siz rezistorning qarshiligini topish uchun yo to‘rtburchak shakldagi rangli qismni bosishingiz
                     kerak, yo rangli liniyalardan birini tanlashingiz kerak. Rangli liniyani tanlab uni sichqonchaning
-                    chap tugmasini bosganingizdan keyin ranglardan birini tanlashingiz kerak. Siz faqat quyiroqdagi
-                    qo‘shimcha ranglarni tanlashingiz mumkin.</p>
+                    chap tugmasini bosganingizdan keyin ranglardan birini tanlashingiz kerak. Siz faqat quyidagi
+                    ranglarni tanlashingiz mumkin.</p>
             </aside>
             <figure><img src="${colorsImage}"
                     alt="Ranglardan qaysi rangni tanlsh kerakligi ko‘rsatilgan.">
@@ -125,7 +138,7 @@ class ResistorCalculator {
             </figure>
         </section>`;
         this.#parentElement.insertAdjacentHTML("afterbegin", html);
-    }
+    } ch
     #addResistorCalculatorSection() {
         const html = `<section class="container" id="resistor-calculator">
             <h2>Qarshilikni o‘lchaydigan kalkulyator</h2>
@@ -233,11 +246,11 @@ class ResistorCalculator {
     
     1) Take the array data and set the data into the object;
     2) Change the value of the color with function
-
-
+ 
+ 
     1)
-
-
+ 
+ 
     */
 
     renderResistorCalculator() {
