@@ -125,6 +125,7 @@ footer a {
     align-items: center;
     font-size: 3.2rem;
     gap: 4px;
+    max-width: 21rem;
 }
 
 footer a img {
