@@ -46,12 +46,32 @@ function changeTheColorToTheNamedColor(color) {
     return namedColor;
 };
 
+function calculateTheResistor(data, dataForTheColors) {
+
+    let resistance;
+    console.log(data, dataForTheColors);
+    // the resistor has three lines
+    let firstLine, secondLine, numberOfZero;
+    firstLine = data.theFirstLine.color.toLowerCase();
+    secondLine = data.theSecondLine.color.toLowerCase();
+    numberOfZero = data.theNumberOfZero.color.toLowerCase();
+    resistance = `${dataForTheColors.theFirstLine[`${firstLine}`]}` + dataForTheColors.theSecondLine[`${secondLine}`];
+    resistance = +resistance;
+    resistance = resistance * 10 ** dataForTheColors.theNumberOfZero[`${numberOfZero}`];
+    console.log(resistance);
+    // The resistor has four lines
+    // The  resistor has five lines
+    // The resistor has five lines
+    // console.log("data", this._dataForColorsOfTheResistor);
+    return { resistance: resistance };
+}
+
 const generalElements = new GeneralElements();
 class ResistorCalculator {
     #header = document.querySelector("header");
     #parentElement = document.querySelector("main");
     #horizontalRule;
-    #dialog;
+    dialog;
     #countTheResistorButton;
     _resistorColors = {
     };
@@ -115,6 +135,7 @@ class ResistorCalculator {
             theCoefficientOfTheTemperature: this.theCoefficientOfTheTemperature
         }
     }
+    _result;
     setAttributeOfTheHR() {
         this.#horizontalRule = document.querySelector("hr");
         this.#horizontalRule.setAttribute("noshade", "");
@@ -163,8 +184,8 @@ class ResistorCalculator {
         this.#parentElement.insertAdjacentHTML("beforeend", html);
     }
     #showTheDialog() {
-        this.#dialog = document.querySelector("dialog");
-        this.#dialog.show();
+        this.dialog = document.querySelector("dialog");
+        this.dialog.show();
     }
     #addHorizontalLine() {
         const horizontalRule = document.createElement("hr");
@@ -174,6 +195,8 @@ class ResistorCalculator {
         // let button
         this.#countTheResistorButton = document.querySelector("section form button");
 
+        let dialog = this.dialog;
+        let dataForColorsOfTheResistor = this._dataForColorsOfTheResistor;
 
         let form = document.querySelector("form");
         let buttonOfTheForm = document.querySelector("form button:last-child");
@@ -181,7 +204,7 @@ class ResistorCalculator {
             e.preventDefault();
 
             console.log(e.target.parentElement);
-
+            console.log(dialog);
             this._data = Array.from(form).slice(0, -1);
             this._resistorColors = {
                 theFirstLine: {
@@ -204,15 +227,13 @@ class ResistorCalculator {
                 },
             };
             console.log(this._resistorColors);
+            this._result = calculateTheResistor(this._resistorColors, dataForColorsOfTheResistor);
 
         });
+        console.log(this._result);
         return this._data;
     };
-    calculateTheResistor() {
-        // console.log(this._resistorColors);
 
-        console.log(this._dataForColorsOfTheResistor);
-    }
     changeThecolorOfTheLines() {
         this.lines = document.querySelectorAll("rectangle");
         this.lines = Array.from(this.lines);
@@ -264,7 +285,7 @@ class ResistorCalculator {
         this.setAttributeOfTheHR();
         this.#getColorsOfTheInput();
         this.changeThecolorOfTheLines();
-        this.calculateTheResistor();
+        // this.calculateTheResistor();
 
     }
 }
