@@ -51,19 +51,41 @@ function calculateTheResistor(data, dataForTheColors) {
     let resistance;
     console.log(data, dataForTheColors);
     // the resistor has three lines
-    let firstLine, secondLine, numberOfZero;
+    let firstLine, secondLine, thirdLine, numberOfZero, thePossibleMistake, theCoefficientOfTheTemperature;
     firstLine = data.theFirstLine.color.toLowerCase();
     secondLine = data.theSecondLine.color.toLowerCase();
     numberOfZero = data.theNumberOfZero.color.toLowerCase();
     resistance = `${dataForTheColors.theFirstLine[`${firstLine}`]}` + dataForTheColors.theSecondLine[`${secondLine}`];
-    resistance = +resistance;
-    resistance = resistance * 10 ** dataForTheColors.theNumberOfZero[`${numberOfZero}`];
-    console.log(resistance);
+    // resistance = +resistance;
+    // resistance = resistance * 10 ** dataForTheColors.theNumberOfZero[`${numberOfZero}`];
     // The resistor has four lines
+    thirdLine = data.theThirdLine.color.toLowerCase();
+    resistance = resistance + dataForTheColors.theThirdLine[`${thirdLine}`];
+    resistance = resistance * 10 ** dataForTheColors.theNumberOfZero[`${numberOfZero}`];
+    // console.log(resistance);
+
     // The  resistor has five lines
-    // The resistor has five lines
+    thePossibleMistake = data.thePossibleMistake.color.toLowerCase();
+    thePossibleMistake = dataForTheColors.thePossibleMistake[`${thePossibleMistake}`];
+
+    // The resistor has six lines
+    theCoefficientOfTheTemperature = data.theCoefficientOfTheTemperature.color.toLowerCase();
+    theCoefficientOfTheTemperature = dataForTheColors.theCoefficientOfTheTemperature[`${theCoefficientOfTheTemperature}`] + "℃";
     // console.log("data", this._dataForColorsOfTheResistor);
-    return { resistance: resistance };
+    return {
+        resistance: resistance,
+        thePossibleMistake: thePossibleMistake ? thePossibleMistake : "",
+        theCoefficientOfTheTemperature: theCoefficientOfTheTemperature ? theCoefficientOfTheTemperature : ""
+    };
+}
+function showTheResultInTheDialog(dialog, data) {
+    dialog;
+    // The resistor has three lines
+    dialog.innerHTML = `Qarshilik ${data.resistance} Om`;
+    // The resistor has four lines
+    dialog.innerHTML = `Qarshilik ${data.resistance} Om`;
+    // The resistor has Five lines
+    // The resistor has six lines
 }
 
 const generalElements = new GeneralElements();
@@ -197,7 +219,6 @@ class ResistorCalculator {
 
         let dialog = this.dialog;
         let dataForColorsOfTheResistor = this._dataForColorsOfTheResistor;
-
         let form = document.querySelector("form");
         let buttonOfTheForm = document.querySelector("form button:last-child");
         buttonOfTheForm.addEventListener("click", function (e) {
@@ -228,9 +249,10 @@ class ResistorCalculator {
             };
             console.log(this._resistorColors);
             this._result = calculateTheResistor(this._resistorColors, dataForColorsOfTheResistor);
+            showTheResultInTheDialog(dialog, this._result);
+            console.log(this._result);
 
         });
-        console.log(this._result);
         return this._data;
     };
 
@@ -267,10 +289,12 @@ class ResistorCalculator {
     
     1) Take the array data and set the data into the object;
     2) Change the value of the color with function
+
+    
  
- 
-    1)
- 
+    1) Set and calculate the resistor's data and resistance. Return the correct result for resistor
+    2) Show the result in the dialog
+    3)We should easly able to choose the lines
  
     */
 
