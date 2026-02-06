@@ -39,21 +39,77 @@ section figure figcaption {
 section:nth-child(2) {
     padding: 0 4.8rem;
     display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
+    grid-template-columns: 20.1rem 1fr;
+    row-gap: 0;
+}
+
+section:nth-child(2) h2 {
+    grid-column: 1/3;
+    text-align: center;
+}
+
+section menu {
+    display: flex;
+    float: left;
+    flex-direction: column;
+    max-width: 20.1rem;
+    align-self: first baseline;
+}
+
+menu button {
+    border-radius: 4px;
+    background-color: #fefae9;
+    color: #333;
+    border-top-color: #fefae9;
+    border-left-color: #fefae9;
+    border-right-color: #fefae9;
+    border-bottom-color: #fdefbd;
+    padding: 0.8rem 1.6rem;
+    box-shadow: 0 3px 3px rgba(51, 51, 51, 0.377);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+menu button:hover,
+menu .active {
+    border-color: #f9ca24;
+    background-color: #f9ca24;
+    color: #fefae9;
+    transition: all 300ms ease-in-out;
+}
+
+menu button img {
+    width: 10rem;
+}
+
+section:nth-child(2) picture,
+section form {
+    grid-column: 2/3;
+    padding-left: 10rem;
+    padding-top: 1.2rem;
+}
+
+section:nth-child(2) picture {
+    display: inline-block;
 }
 
 section:nth-child(2) picture img {
     max-width: 60rem;
 }
 
+picture[data-line="lines"] {
+    transform: translateY(-5rem);
+    z-index: 15;
+}
+
 section form {
     display: flex;
     flex-wrap: wrap;
-    width: 60rem;
-    justify-content: space-between;
-    transform: translateY(-4rem);
-    gap: 2.4rem;
+    width: 73rem;
+    transform: translateY(-5rem);
+    gap: 7.2rem;
 }
 
 form button:nth-child(1),
@@ -93,78 +149,73 @@ section:nth-child(2) {
     position: relative;
 }
 
-.line-1 {
+.line-1,
+.line-2,
+.line-3,
+.line-4,
+.line-5,
+.line-6 {
     position: absolute;
+    cursor: pointer
+}
+
+.hidden {
+    display: none;
 }
 
 .line-1 {
-    position: absolute;
     left: 43.7rem;
-    top: 13.3rem;
+    top: 10.1rem;
     background-color: green;
     width: 2.1rem;
     height: 17.6rem;
     z-index: 30;
-    cursor: pointer;
 }
 
 .line-2 {
-    position: absolute;
-    position: absolute;
     left: 57.8rem;
-    top: 16.5rem;
+    top: 13.3rem;
     background-color: yellow;
     width: 2.1rem;
-    height: 11.2rem;
+    height: 11.1rem;
     z-index: 30;
-    cursor: pointer;
 }
 
 .line-3 {
-    position: absolute;
     left: 61.6rem;
-    top: 16.5rem;
+    top: 13.3rem;
     background-color: brown;
     width: 2.1rem;
-    height: 11.2rem;
+    height: 11.1rem;
     z-index: 30;
-    cursor: pointer;
-    position: absolute;
 }
 
 .line-4 {
-    position: absolute;
     left: 65.4rem;
-    top: 16.5rem;
+    top: 13.3rem;
     background-color: blue;
     width: 2.1rem;
-    height: 11.2rem;
+    height: 11.1rem;
     z-index: 30;
-    cursor: pointer;
 
 }
 
 .line-5 {
-    position: absolute;
     left: 76.2rem;
-    top: 16.5rem;
+    top: 13.3rem;
     background-color: orange;
-    width: 2.1rem;
-    height: 11.2rem;
+    width: 2.2rem;
+    height: 11.1rem;
     z-index: 30;
-    cursor: pointer;
 }
 
 .line-6 {
-    position: absolute;
-    position: absolute;
     left: 85rem;
-    top: 13.3rem;
+    top: 10rem;
     background-color: red;
     width: 2.1rem;
     height: 17.6rem;
     z-index: 30;
-    cursor: pointer;
 }
 
 dialog {
