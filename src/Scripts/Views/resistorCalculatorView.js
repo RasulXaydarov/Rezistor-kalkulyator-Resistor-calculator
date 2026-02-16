@@ -1,21 +1,15 @@
 import GeneralElements from "./generalElementsView";
 import colorsImage from "url:../../Images/ColorPicker.png" with {type: "image/png"};
-import linesThree from "url:../../Images/Lines-3.png" with {type: "image/png"};
-import linesFour from "url:../../Images/Lines-4.png" with {type: "image/png"};
-import linesFive from "url:../../Images/Lines-5.png" with {type: "image/png"};
-import linesSix from "url:../../Images/Lines-6.png" with {type: "image/png"};
 import resistorLittleImageThreeLines from "url:../../Images/ResistorLittleImages/image-resistor-3.png" with {type: "image/png"};
 import resistorLittleImageFourLines from "url:../../Images/ResistorLittleImages/image-resistor-4.png" with {type: "image/png"};
 import resistorLittleImageFiveLines from "url:../../Images/ResistorLittleImages/image-resistor-5.png" with {type: "image/png"};
 import resistorLittleImageSixLines from "url:../../Images/ResistorLittleImages/image-resistor-6.png" with {type: "image/png"};
 import resistorNoLines from "url:../../Images/ResistorNoLines.png" with {type: "image/png"};
-let colorOne, colorTwo, colorThree, colorFour;
 let button = document.querySelector("form button[class=\"submit\"]");
 let buttonsOfColors = document.querySelectorAll("div button");
 buttonsOfColors = Array.from(buttonsOfColors);
 let colorsOfTheLines = {};
 colorsOfTheLines.numberOfLines = 3;
-// const menu = document.querySelector("menu");
 const imageLinesThreeURL = new URL("../../Images/Lines-3.png", import.meta.url);
 const imageLinesFourURL = new URL("../../Images/Lines-4.png", import.meta.url);
 const imageLinesFiveURL = new URL("../../Images/Lines-5.png", import.meta.url);
@@ -66,44 +60,46 @@ function changeTheColorToTheNamedColor(color) {
 };
 
 function calculateTheResistor(data, dataForTheColors) {
-
     let resistance;
-    console.log(data, dataForTheColors);
-    // the resistor has three lines
-    let firstLine, secondLine, thirdLine, numberOfZero, thePossibleMistake, theCoefficientOfTheTemperature;
+    let firstLine, secondLine, thirdLine, numberOfZeroLine, thePossibleMistake, theCoefficientOfTheTemperature;
     firstLine = data.theFirstLine.color.toLowerCase();
     secondLine = data.theSecondLine.color.toLowerCase();
-    numberOfZero = data.theNumberOfZero.color.toLowerCase();
+    numberOfZeroLine = data.theNumberOfZero.color.toLowerCase();
     resistance = `${dataForTheColors.theFirstLine[`${firstLine}`]}` + dataForTheColors.theSecondLine[`${secondLine}`];
+    resistance = +resistance;
 
-    // The resistor has four lines
-    thirdLine = data.theThirdLine.color.toLowerCase();
-    resistance = resistance + dataForTheColors.theThirdLine[`${thirdLine}`];
-    resistance = resistance * 10 ** dataForTheColors.theNumberOfZero[`${numberOfZero}`];
-    // console.log(resistance);
+    if (data.numberOfLines === 3) numberOfZeroLine = data.theThirdLine.color.toLowerCase();
+    let zero = dataForTheColors.theNumberOfZero[`${numberOfZeroLine}`];
+    if (data.numberOfLines === 3) resistance = resistance * 10 ** zero;
+    if (data.numberOfLines === 3) return { resistance: resistance };
 
-    // The  resistor has five lines
-    thePossibleMistake = data.thePossibleMistake.color.toLowerCase();
-    thePossibleMistake = dataForTheColors.thePossibleMistake[`${thePossibleMistake}`];
-
-    // The resistor has six lines
-    theCoefficientOfTheTemperature = data.theCoefficientOfTheTemperature.color.toLowerCase();
-    theCoefficientOfTheTemperature = dataForTheColors.theCoefficientOfTheTemperature[`${theCoefficientOfTheTemperature}`] + "℃";
-    // console.log("data", this._dataForColorsOfTheResistor);
-    return {
+    if (data.numberOfLines === 4 || data.numberOfLines === 5 || data.numberOfLines === 6) thirdLine = data.theThirdLine.color.toLowerCase();
+    if (data.numberOfLines === 4 || data.numberOfLines === 5 || data.numberOfLines === 6) resistance = resistance + `${dataForTheColors.theThirdLine[`${thirdLine}`]}`;
+    if (data.numberOfLines === 4 || data.numberOfLines === 5 || data.numberOfLines === 6) resistance = +resistance;
+    if (data.numberOfLines === 4 || data.numberOfLines === 5 || data.numberOfLines === 6) resistance = resistance * 10 ** dataForTheColors.theNumberOfZero[`${numberOfZeroLine}`];
+    if (data.numberOfLines === 4) return { resistance: resistance }
+    console.log(resistance);
+    if (data.numberOfLines === 5 || data.numberOfLines === 6) thePossibleMistake = data.thePossibleMistake.color.toLowerCase();
+    if (data.numberOfLines === 5 || data.numberOfLines === 6) thePossibleMistake = dataForTheColors.thePossibleMistake[`${thePossibleMistake}`];
+    if (data.numberOfLines === 5) return {
         resistance: resistance,
-        thePossibleMistake: thePossibleMistake ? thePossibleMistake : "",
-        theCoefficientOfTheTemperature: theCoefficientOfTheTemperature ? theCoefficientOfTheTemperature : ""
+        thePossibleMistake: thePossibleMistake
+    };
+    if (data.numberOfLines === 6) theCoefficientOfTheTemperature = data.theCoefficientOfTheTemperature.color.toLowerCase();
+    if (data.numberOfLines === 6) console.log(data.numberOfLines);
+    if (data.numberOfLines === 6) theCoefficientOfTheTemperature = dataForTheColors.theCoefficientOfTheTemperature[`${theCoefficientOfTheTemperature}`] + "℃";
+    if (data.numberOfLines === 6) return {
+        resistance: resistance,
+        thePossibleMistake: thePossibleMistake,
+        theCoefficientOfTheTemperature: theCoefficientOfTheTemperature
     };
 }
 function showTheResultInTheDialog(dialog, data) {
-    dialog;
-    // The resistor has three lines
     dialog.innerHTML = `Qarshilik ${data.resistance} Om`;
-    // The resistor has four lines
-    dialog.innerHTML = `Qarshilik ${data.resistance} Om`;
-    // The resistor has Five lines
-    // The resistor has six lines
+
+    if (data.thePossibleMistake) dialog.innerHTML = `Qarshilik ${data.resistance} Om va mumkin bo‘lgan xatoligi ${data.thePossibleMistake}`;
+
+    if (data.thePossibleMistake && data.theCoefficientOfTheTemperature) dialog.innerHTML = `Qarshilik ${data.resistance} Om, mumkin bo‘lgan xatoligi ${data.thePossibleMistake}, temperatura koeffitsiyenti ${data.theCoefficientOfTheTemperature}`;
 }
 
 const generalElements = new GeneralElements();
@@ -180,68 +176,6 @@ class ResistorCalculator {
             theCoefficientOfTheTemperature: this.theCoefficientOfTheTemperature
         }
     }
-    changeTheButtonThreeLinesToActive() {
-        this.menu = document.querySelector("section:nth-child(2) menu");
-        let buttonThreeLines = this.menu.children[0];
-
-        buttonThreeLines.classList.add("active");
-        this.addSomeLines(buttonThreeLines.attributes[0].value);
-    };
-    changeTheLinesBelowTheResistor(resistorImageLines) {
-        switch (this._resistorColors.numberOfLines) {
-            case 3:
-                resistorImageLines.children[0].src = imageLinesThreeURL;
-                break;
-            case 4:
-                resistorImageLines.children[0].src = imageLinesFourURL;
-                break;
-            case 5:
-                resistorImageLines.children[0].src = imageLinesFiveURL;
-                break;
-            case 6:
-                resistorImageLines.children[0].src = imageLinesSixURL;
-                break;
-        }
-    };
-    addEventToTheMenu() {
-        let resistorObject = this;
-        this.menu.addEventListener("click", function (e) {
-            e.preventDefault();
-            let button = e.target.closest("button");
-            let buttonActive = document.querySelector("menu .active");
-            if (buttonActive)
-                buttonActive.classList.remove("active");
-            button.classList.add("active");
-            resistorObject.addSomeLines(button.attributes[0].value);
-        });
-    }
-    addSomeLines(number) {
-        this._rectangles = document.querySelectorAll("rectangle");
-        this._rectangles = Array.from(this._rectangles);
-        this._buttonsOfColors = document.querySelectorAll("form button");
-        this._buttonsOfColors = Array.from(this._buttonsOfColors);
-        this._buttonsOfColors.splice(-1);
-        this._resistorColors.numberOfLines = +number;
-        this._rectangles.forEach(rectangle => rectangle.classList.add("hidden"));
-        this._buttonsOfColors.forEach(buttonOfColor => buttonOfColor.classList.add("hidden"));
-        let indexNumber;
-        this._rectangles.forEach(rectangle => {
-            indexNumber = this._rectangles.indexOf(rectangle) + 1;
-            if (indexNumber <= this._resistorColors.numberOfLines)
-                rectangle.classList.remove("hidden");
-        });
-        let resistorImageLines = document.querySelector("picture[data-line=\"lines\"]");
-        this.changeTheLinesBelowTheResistor(resistorImageLines);
-
-        this._buttonsOfColors.forEach(buttonOfColor => {
-            if (+buttonOfColor.attributes[2].value <= this._resistorColors.numberOfLines)
-                buttonOfColor.classList.remove("hidden");
-        });
-    };
-    setAttributeOfTheHR() {
-        this.#horizontalRule = document.querySelector("hr");
-        this.#horizontalRule.setAttribute("noshade", "");
-    }
     addTitleToTheHero() {
         const html = `<h1>Resistor liniyalarining rangini tanlang va qarshiligini toping.</h1>`;
         this.#header.insertAdjacentHTML("beforeend", html);
@@ -279,7 +213,7 @@ class ResistorCalculator {
                 <rectangle class="line-6" data-line="line-6"></rectangle>
                 <picture><img src="${resistorNoLines}" alt="Rezistorni o‘lchaydigan kalkulyatorning rasmi"></picture>
                 <picture data-line="lines">
-                    <img src="${linesThree}" alt="Rezistorning rasmi" data-number="3">
+                    <img src="${imageLinesThreeURL}" alt="Rezistorning rasmi" data-number="3">
                 </picture>
                 <form>
                     <button data-jscolor="{preset:'threeLines', onChange: 'change(this)'}" data-color="color-1" data-number=\"1\"></button>
@@ -298,50 +232,110 @@ class ResistorCalculator {
         this.dialog = document.querySelector("dialog");
         this.dialog.show();
     }
+    #changeTheButtonThreeLinesToActive() {
+        this.menu = document.querySelector("section:nth-child(2) menu");
+        let buttonThreeLines = this.menu.children[0];
+
+        buttonThreeLines.classList.add("active");
+        this.addSomeLines(buttonThreeLines.attributes[0].value);
+    };
+    addEventToTheMenu() {
+        let resistorObject = this;
+        this.menu.addEventListener("click", function (e) {
+            e.preventDefault();
+            let button = e.target.closest("button");
+            let buttonActive = document.querySelector("menu .active");
+            if (buttonActive)
+                buttonActive.classList.remove("active");
+            button.classList.add("active");
+            resistorObject.addSomeLines(button.attributes[0].value);
+        });
+    }
+    addSomeLines(number) {
+        this._rectangles = document.querySelectorAll("rectangle");
+        this._rectangles = Array.from(this._rectangles);
+        this._buttonsOfColors = document.querySelectorAll("form button");
+        this._buttonsOfColors = Array.from(this._buttonsOfColors);
+        this._buttonsOfColors.splice(-1);
+        this._resistorColors.numberOfLines = +number;
+        this._rectangles.forEach(rectangle => rectangle.classList.add("hidden"));
+        this._buttonsOfColors.forEach(buttonOfColor => buttonOfColor.classList.add("hidden"));
+        let indexNumber;
+        this._rectangles.forEach(rectangle => {
+            indexNumber = this._rectangles.indexOf(rectangle) + 1;
+            if (indexNumber <= this._resistorColors.numberOfLines)
+                rectangle.classList.remove("hidden");
+        });
+        let resistorImageLines = document.querySelector("picture[data-line=\"lines\"]");
+        this.#changeTheLinesBelowTheResistor(resistorImageLines);
+
+        this._buttonsOfColors.forEach(buttonOfColor => {
+            if (+buttonOfColor.attributes[2].value <= this._resistorColors.numberOfLines)
+                buttonOfColor.classList.remove("hidden");
+        });
+    };
+    #changeTheLinesBelowTheResistor(resistorImageLines) {
+        switch (this._resistorColors.numberOfLines) {
+            case 3:
+                resistorImageLines.children[0].src = imageLinesThreeURL;
+                break;
+            case 4:
+                resistorImageLines.children[0].src = imageLinesFourURL;
+                break;
+            case 5:
+                resistorImageLines.children[0].src = imageLinesFiveURL;
+                break;
+            case 6:
+                resistorImageLines.children[0].src = imageLinesSixURL;
+                break;
+        }
+    };
     #addHorizontalLine() {
         const horizontalRule = document.createElement("hr");
         this.#parentElement.append(horizontalRule);
     }
+    #setAttributeOfTheHR() {
+        this.#horizontalRule = document.querySelector("hr");
+        this.#horizontalRule.setAttribute("noshade", "");
+    }
     #getColorsOfTheInput() {
-        // let button
         this.#countTheResistorButton = document.querySelector("section form button");
 
         let dialog = this.dialog;
         let dataForColorsOfTheResistor = this._dataForColorsOfTheResistor;
         let form = document.querySelector("form");
         let buttonOfTheForm = document.querySelector("form button:last-child");
+        let resistorColors = this._resistorColors;
         buttonOfTheForm.addEventListener("click", function (e) {
             e.preventDefault();
 
             this._data = Array.from(form).slice(0, -1);
-            this._resistorColors = {
-                theFirstLine: {
-                    color: changeTheColorToTheNamedColor(this._data[0].dataset.currentColor),
-                },
-                theSecondLine: {
-                    color: changeTheColorToTheNamedColor(this._data[1].dataset.currentColor),
-                },
-                theThirdLine: {
-                    color: changeTheColorToTheNamedColor(this._data[2].dataset.currentColor),
-                },
-                theNumberOfZero: {
-                    color: changeTheColorToTheNamedColor(this._data[3].dataset.currentColor),
-                },
-                thePossibleMistake: {
-                    color: changeTheColorToTheNamedColor(this._data[4].dataset.currentColor),
-                },
-                theCoefficientOfTheTemperature: {
-                    color: changeTheColorToTheNamedColor(this._data[5].dataset.currentColor),
-                },
+            resistorColors.theFirstLine = {
+                color: changeTheColorToTheNamedColor(this._data[0].dataset.currentColor),
             };
-            console.log(this._resistorColors);
-            this._result = calculateTheResistor(this._resistorColors, dataForColorsOfTheResistor);
+            resistorColors.theSecondLine = {
+                color: changeTheColorToTheNamedColor(this._data[1].dataset.currentColor),
+            };
+            resistorColors.theThirdLine = {
+                color: changeTheColorToTheNamedColor(this._data[2].dataset.currentColor),
+            };
+            resistorColors.theNumberOfZero = {
+                color: changeTheColorToTheNamedColor(this._data[3].dataset.currentColor),
+            };
+            resistorColors.thePossibleMistake = {
+                color: changeTheColorToTheNamedColor(this._data[4].dataset.currentColor),
+            };
+            resistorColors.theCoefficientOfTheTemperature = {
+                color: changeTheColorToTheNamedColor(this._data[5].dataset.currentColor),
+            };
+            this._result = calculateTheResistor(resistorColors, dataForColorsOfTheResistor);
             showTheResultInTheDialog(dialog, this._result);
-            console.log(this._result);
-
         });
         return this._data;
     };
+    _resetTheResult() {
+
+    }
 
     changeThecolorOfTheLines() {
         this.lines = document.querySelectorAll("rectangle");
@@ -372,15 +366,7 @@ class ResistorCalculator {
     2)Calculate the resistance 
     3) The resistor can have three lines, four lines, five lines or six lines. We should calculate for any any type of the resistor
      
-    1) Take the array data and set the data into the object;
-    2) Change the value of the color with function
     
-     
-     
-    1) Set and calculate the resistor's data and resistance. Return the correct result for resistor
-    2) Show the result in the dialog
-    3)We should easly able to choose the lines
-     
     */
 
     renderResistorCalculator() {
@@ -388,15 +374,14 @@ class ResistorCalculator {
         this.addTitleToTheHero();
         this.#addSectionHowToUse();
         this.#addResistorCalculatorSection();
-        this.changeTheButtonThreeLinesToActive();
+        this.#changeTheButtonThreeLinesToActive();
         this.addEventToTheMenu();
         this.#showTheDialog();
         this.#addHorizontalLine();
         generalElements.addScrollBehavior();
-        this.setAttributeOfTheHR();
+        this.#setAttributeOfTheHR();
         this.#getColorsOfTheInput();
         this.changeThecolorOfTheLines();
-        // this.calculateTheResistor();
     }
 }
 
