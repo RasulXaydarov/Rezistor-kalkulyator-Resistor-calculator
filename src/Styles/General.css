@@ -114,6 +114,26 @@ nav ul a {
     margin: inherit;
 }
 
+section:nth-child(2) picture.spinner {
+    display: inline-block;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.spinner img {
+    animation: loadSpinner 2s infinite linear;
+}
+
+@keyframes loadSpinner {
+    from {
+        transform: rotate(0);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 footer {
     display: flex;
     flex-direction: column;

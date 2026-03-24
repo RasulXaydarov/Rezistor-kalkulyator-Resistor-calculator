@@ -14,7 +14,6 @@ const imageLinesThreeURL = new URL("../../Images/Lines-3.png", import.meta.url);
 const imageLinesFourURL = new URL("../../Images/Lines-4.png", import.meta.url);
 const imageLinesFiveURL = new URL("../../Images/Lines-5.png", import.meta.url);
 const imageLinesSixURL = new URL("../../Images/Lines-6.png", import.meta.url);
-
 //  Switch operator for converting color to the named color 
 function changeTheColorToTheNamedColor(color) {
     let namedColor;
@@ -197,6 +196,7 @@ class ResistorCalculator {
         this.#parentElement.insertAdjacentHTML("afterbegin", html);
     }
     #addResistorCalculatorSection() {
+
         const html = `<section class="container" id="resistor-calculator">
             <h2>Qarshilikni o‘lchaydigan kalkulyator</h2>
              <menu>
@@ -211,7 +211,7 @@ class ResistorCalculator {
                 <rectangle class="line-4" data-line="line-4"></rectangle>
                 <rectangle class="line-5" data-line="line-5"></rectangle>
                 <rectangle class="line-6" data-line="line-6"></rectangle>
-                <picture><img src="${resistorNoLines}" alt="Rezistorni o‘lchaydigan kalkulyatorning rasmi"></picture>
+                <picture class="resistor-image"><img src="${resistorNoLines}" alt="Rezistorni o‘lchaydigan kalkulyatorning rasmi"></picture>
                 <picture data-line="lines">
                     <img src="${imageLinesThreeURL}" alt="Rezistorning rasmi" data-number="3">
                 </picture>
@@ -227,6 +227,7 @@ class ResistorCalculator {
                 <dialog>Hisobning natijasi</dialog>
         </section>`;
         this.#parentElement.insertAdjacentHTML("beforeend", html);
+
     }
     #showTheDialog() {
         this.dialog = document.querySelector("dialog");
@@ -360,20 +361,18 @@ class ResistorCalculator {
             line.click();
         });
     };
-
-    /* 
-    1)Add the data to the object
-    2)Calculate the resistance 
-    3) The resistor can have three lines, four lines, five lines or six lines. We should calculate for any any type of the resistor
-     
-    
-    */
-
+    removeSpinner() {
+        let removeSpinner = setInterval(() => { if (document.querySelector("#resistor-calculator .resistor-image img").complete) document.querySelector(".spinner").remove(); }, 200);
+        setTimeout(() => { clearInterval(removeSpinner) }, 500);
+    }
     renderResistorCalculator() {
         generalElements.renderGeneralElements();
         this.addTitleToTheHero();
         this.#addSectionHowToUse();
         this.#addResistorCalculatorSection();
+        const sectionResistor = document.querySelector("#resistor-calculator");
+        generalElements.renderSpinner(sectionResistor);
+        this.removeSpinner();
         this.#changeTheButtonThreeLinesToActive();
         this.addEventToTheMenu();
         this.#showTheDialog();
