@@ -14,6 +14,7 @@ main section:first-child {
 }
 
 section {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 3.2rem;
@@ -36,8 +37,16 @@ section figure figcaption {
     padding: 0.8rem 1.2rem;
 }
 
+.arrow {
+    position: absolute;
+    bottom: -12rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 200;
+}
+
 section:nth-child(2) {
-    padding: 0 4.8rem;
+    padding: 4.8rem;
     display: grid;
     grid-template-columns: 20.1rem 1fr;
     row-gap: 0;
@@ -165,7 +174,7 @@ section:nth-child(2) {
 
 .line-1 {
     left: 43.7rem;
-    top: 10.1rem;
+    top: 14.9rem;
     background-color: green;
     width: 2.1rem;
     height: 17.6rem;
@@ -174,7 +183,7 @@ section:nth-child(2) {
 
 .line-2 {
     left: 57.8rem;
-    top: 13.3rem;
+    top: 18.1rem;
     background-color: yellow;
     width: 2.1rem;
     height: 11.1rem;
@@ -183,7 +192,7 @@ section:nth-child(2) {
 
 .line-3 {
     left: 61.6rem;
-    top: 13.3rem;
+    top: 18.1rem;
     background-color: brown;
     width: 2.1rem;
     height: 11.1rem;
@@ -192,7 +201,7 @@ section:nth-child(2) {
 
 .line-4 {
     left: 65.4rem;
-    top: 13.3rem;
+    top: 18.1rem;
     background-color: blue;
     width: 2.1rem;
     height: 11.1rem;
@@ -202,7 +211,7 @@ section:nth-child(2) {
 
 .line-5 {
     left: 76.2rem;
-    top: 13.3rem;
+    top: 18.1rem;
     background-color: orange;
     width: 2.2rem;
     height: 11.1rem;
@@ -211,7 +220,7 @@ section:nth-child(2) {
 
 .line-6 {
     left: 85rem;
-    top: 10rem;
+    top: 14.8rem;
     background-color: red;
     width: 2.1rem;
     height: 17.6rem;

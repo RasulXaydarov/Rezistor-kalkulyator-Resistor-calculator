@@ -6,7 +6,7 @@ class GeneralElements {
     #navigation;
     renderGeneralElements() {
         let navigation = new Navigation();
-        this.#navigation = navigation
+        this.#navigation = navigation;
         let footer = new FooterView();
         navigation.renderNavigation();
         footer.renderFooter();
@@ -15,9 +15,7 @@ class GeneralElements {
         this.#navigation.addScrollBehaviorToTheNavigation();
     }
     renderSpinner(parentElement) {
-        console.log(parentElement);
         const h2 = parentElement.children[0];
-        console.log(parentElement.children[0]);
         const picture = document.createElement("picture");
         picture.classList.add("spinner");
         const image = new Image();
@@ -30,8 +28,6 @@ class GeneralElements {
             alt="Sekin ma'lumotlar qabul qilayotganligi tufayli hali tayyor bo‘lmaganini bildirish uchun aylanayotgan tasavvuriy surat">
         </picture>`;
         h2.after(picture);
-        // parentElement.children.forEach(element => element.remove());
-        // parentElement.insertAdjacentHTML("beforeend", markup);
     }
 }
 

@@ -1,5 +1,4 @@
 import ResistorCalculator from "./Views/resistorCalculatorView";
-import { getResistorColors } from "./module";
 
 const second = 1;
 function timeout() {
@@ -12,10 +11,8 @@ function timeout() {
 
 async function controlResistorCalculator() {
     try {
-
         let resistorCalculator = new ResistorCalculator();
         resistorCalculator.renderResistorCalculator();
-
     } catch (error) {
         alert(error);
     }

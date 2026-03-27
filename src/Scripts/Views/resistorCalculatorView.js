@@ -5,6 +5,8 @@ import resistorLittleImageFourLines from "url:../../Images/ResistorLittleImages/
 import resistorLittleImageFiveLines from "url:../../Images/ResistorLittleImages/image-resistor-5.png" with {type: "image/png"};
 import resistorLittleImageSixLines from "url:../../Images/ResistorLittleImages/image-resistor-6.png" with {type: "image/png"};
 import resistorNoLines from "url:../../Images/ResistorNoLines.png" with {type: "image/png"};
+import arrowImageSrc from "url:../../Images/Arrow.gif" with {type: "image/gif"};
+
 let button = document.querySelector("form button[class=\"submit\"]");
 let buttonsOfColors = document.querySelectorAll("div button");
 buttonsOfColors = Array.from(buttonsOfColors);
@@ -77,7 +79,6 @@ function calculateTheResistor(data, dataForTheColors) {
     if (data.numberOfLines === 4 || data.numberOfLines === 5 || data.numberOfLines === 6) resistance = +resistance;
     if (data.numberOfLines === 4 || data.numberOfLines === 5 || data.numberOfLines === 6) resistance = resistance * 10 ** dataForTheColors.theNumberOfZero[`${numberOfZeroLine}`];
     if (data.numberOfLines === 4) return { resistance: resistance }
-    console.log(resistance);
     if (data.numberOfLines === 5 || data.numberOfLines === 6) thePossibleMistake = data.thePossibleMistake.color.toLowerCase();
     if (data.numberOfLines === 5 || data.numberOfLines === 6) thePossibleMistake = dataForTheColors.thePossibleMistake[`${thePossibleMistake}`];
     if (data.numberOfLines === 5) return {
@@ -85,7 +86,6 @@ function calculateTheResistor(data, dataForTheColors) {
         thePossibleMistake: thePossibleMistake
     };
     if (data.numberOfLines === 6) theCoefficientOfTheTemperature = data.theCoefficientOfTheTemperature.color.toLowerCase();
-    if (data.numberOfLines === 6) console.log(data.numberOfLines);
     if (data.numberOfLines === 6) theCoefficientOfTheTemperature = dataForTheColors.theCoefficientOfTheTemperature[`${theCoefficientOfTheTemperature}`] + "℃";
     if (data.numberOfLines === 6) return {
         resistance: resistance,
@@ -94,11 +94,11 @@ function calculateTheResistor(data, dataForTheColors) {
     };
 }
 function showTheResultInTheDialog(dialog, data) {
-    dialog.innerHTML = `Qarshilik ${data.resistance} Om`;
+    dialog.innerText = `Qarshilik ${data.resistance} Om`;
 
-    if (data.thePossibleMistake) dialog.innerHTML = `Qarshilik ${data.resistance} Om va mumkin bo‘lgan xatoligi ${data.thePossibleMistake}`;
+    if (data.thePossibleMistake) dialog.innerText = `Qarshilik ${data.resistance} Om va mumkin bo‘lgan xatoligi ${data.thePossibleMistake}`;
 
-    if (data.thePossibleMistake && data.theCoefficientOfTheTemperature) dialog.innerHTML = `Qarshilik ${data.resistance} Om, mumkin bo‘lgan xatoligi ${data.thePossibleMistake}, temperatura koeffitsiyenti ${data.theCoefficientOfTheTemperature}`;
+    if (data.thePossibleMistake && data.theCoefficientOfTheTemperature) dialog.innerText = `Qarshilik ${data.resistance} Om, mumkin bo‘lgan xatoligi ${data.thePossibleMistake}, temperatura koeffitsiyenti ${data.theCoefficientOfTheTemperature}`;
 }
 
 const generalElements = new GeneralElements();
@@ -109,7 +109,6 @@ class ResistorCalculator {
     _rectangles;
     #horizontalRule;
     dialog;
-    #countTheResistorButton;
     _resistorColors = {
         numberOfLines: 3,
     };
@@ -186,7 +185,7 @@ class ResistorCalculator {
                 <p>Siz rezistorning qarshiligini topish uchun yo to‘rtburchak shakldagi rangli qismni bosishingiz
                     kerak, yo rangli liniyalardan birini tanlashingiz kerak. Rangli liniyani tanlab uni sichqonchaning
                     chap tugmasini bosganingizdan keyin ranglardan birini tanlashingiz kerak. Siz faqat quyidagi
-                    ranglarni tanlashingiz mumkin.</p>
+                    ranglarni tanlashingiz mumkin. Rezistorning ranglarini tanlab bo‘lganingizdan keyin quyiroqdagi sariq rangli hisoblamoq tugmasini bosing.</p>
             </aside>
             <figure><img src="${colorsImage}"
                     alt="Ranglardan qaysi rangni tanlsh kerakligi ko‘rsatilgan.">
@@ -194,9 +193,13 @@ class ResistorCalculator {
             </figure>
         </section>`;
         this.#parentElement.insertAdjacentHTML("afterbegin", html);
+        const howToUseSection = document.querySelector("#how-to");
+        const arrowImage = new Image();
+        arrowImage.src = arrowImageSrc;
+        arrowImage.classList.add("arrow");
+        howToUseSection.appendChild(arrowImage);
     }
     #addResistorCalculatorSection() {
-
         const html = `<section class="container" id="resistor-calculator">
             <h2>Qarshilikni o‘lchaydigan kalkulyator</h2>
              <menu>
@@ -227,7 +230,6 @@ class ResistorCalculator {
                 <dialog>Hisobning natijasi</dialog>
         </section>`;
         this.#parentElement.insertAdjacentHTML("beforeend", html);
-
     }
     #showTheDialog() {
         this.dialog = document.querySelector("dialog");
@@ -294,20 +296,18 @@ class ResistorCalculator {
     #addHorizontalLine() {
         const horizontalRule = document.createElement("hr");
         this.#parentElement.append(horizontalRule);
+        this.#horizontalRule = document.querySelector("hr");
     }
     #setAttributeOfTheHR() {
-        this.#horizontalRule = document.querySelector("hr");
         this.#horizontalRule.setAttribute("noshade", "");
     }
     #getColorsOfTheInput() {
-        this.#countTheResistorButton = document.querySelector("section form button");
-
         let dialog = this.dialog;
         let dataForColorsOfTheResistor = this._dataForColorsOfTheResistor;
         let form = document.querySelector("form");
-        let buttonOfTheForm = document.querySelector("form button:last-child");
+        let countTheResistorButton = document.querySelector("form button:last-child");
         let resistorColors = this._resistorColors;
-        buttonOfTheForm.addEventListener("click", function (e) {
+        countTheResistorButton.addEventListener("click", function (e) {
             e.preventDefault();
 
             this._data = Array.from(form).slice(0, -1);
@@ -332,12 +332,7 @@ class ResistorCalculator {
             this._result = calculateTheResistor(resistorColors, dataForColorsOfTheResistor);
             showTheResultInTheDialog(dialog, this._result);
         });
-        return this._data;
     };
-    _resetTheResult() {
-
-    }
-
     changeThecolorOfTheLines() {
         this.lines = document.querySelectorAll("rectangle");
         this.lines = Array.from(this.lines);
@@ -362,8 +357,11 @@ class ResistorCalculator {
         });
     };
     removeSpinner() {
-        let removeSpinner = setInterval(() => { if (document.querySelector("#resistor-calculator .resistor-image img").complete) document.querySelector(".spinner").remove(); }, 200);
-        setTimeout(() => { clearInterval(removeSpinner) }, 500);
+        let removeSpinner = setInterval(() => {
+            if (!document.querySelector(".spinner")) return;
+            if (document.querySelector("#resistor-calculator .resistor-image img").complete) document.querySelector(".spinner").remove();
+        }, 200);
+        setTimeout(() => { clearInterval(removeSpinner) }, 800);
     }
     renderResistorCalculator() {
         generalElements.renderGeneralElements();

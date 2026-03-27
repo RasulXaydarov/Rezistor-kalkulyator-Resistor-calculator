@@ -4,7 +4,6 @@
     margin: 0;
 }
 
-
 html {
     font-size: 62.5%;
 }
@@ -34,6 +33,8 @@ Font-sizes
 
 2.5rem
 5.1rem
+2rem
+1.6rem
 
 COLORS
 
@@ -135,10 +136,10 @@ section:nth-child(2) picture.spinner {
 }
 
 footer {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     padding: 3.2rem;
-
 }
 
 footer a {
@@ -154,6 +155,15 @@ footer a img {
 }
 
 footer small {
+    display: flex;
+    align-items: center;
     margin: 0 auto;
     font-size: 1.6rem;
+}
+
+footer p {
+    display: flex;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
 }

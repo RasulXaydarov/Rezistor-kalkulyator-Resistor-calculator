@@ -11,10 +11,16 @@ class FooterView {
         small.innerText = `© ${this.#year} designed by Chavandoz`;
         this.#parentElement.append(small);
     };
+    #addContact() {
+        let p = document.createElement("p");
+        p.innerText = "E-mail: Chavandoz@proton.me";
+        this.#parentElement.append(p);
+    }
     renderFooter() {
-        let logo = `<a class="logo" href="#"><img src="${logoImage}">Qarshilik</a>`;
+        let logo = `<a class="logo" href="#"><img src="${logoImage}" alt="Logotip surati">Qarshilik</a>`;
         this.#parentElement.insertAdjacentHTML("afterbegin", logo);
         this.#addCopyrightToTheFooter();
+        this.#addContact();
     }
 }
 export default FooterView;
