@@ -6,6 +6,7 @@ import resistorLittleImageFiveLines from "url:../../Images/ResistorLittleImages/
 import resistorLittleImageSixLines from "url:../../Images/ResistorLittleImages/image-resistor-6.png" with {type: "image/png"};
 import resistorNoLines from "url:../../Images/ResistorNoLines.png" with {type: "image/png"};
 import arrowImageSrc from "url:../../Images/Arrow.gif" with {type: "image/gif"};
+import errorIconURL from "url:../../Images/Icons/warning-diamond.svg" with {type: "image/svg + xml"};
 
 let button = document.querySelector("form button[class=\"submit\"]");
 let buttonsOfColors = document.querySelectorAll("div button");
@@ -161,6 +162,7 @@ class ResistorCalculator {
     }
     _dataForColorsOfTheResistor;
     _result;
+    #errorMessage = "Kechirasiz xatolik bo‘ldi. Rezistorni rasmi kelmadi";
     constructor() {
         this.theListOfTheResistanceForTheFirstLine.black = "";
         this.theListForNumberOfZero.gold = -1;
@@ -182,10 +184,10 @@ class ResistorCalculator {
         const html = `<section class="container" id="how-to">
             <aside>
                 <h2>Qanday qilib resistorning qarshiligi topiladi.</h2>
-                <p>Siz rezistorning qarshiligini topish uchun yo to‘rtburchak shakldagi rangli qismni bosishingiz
+                <p>Siz rezistorning qarshiligini topish uchun yo rezistor pastidagi to‘rtburchak shaklni bosishingiz
                     kerak, yo rangli liniyalardan birini tanlashingiz kerak. Rangli liniyani tanlab uni sichqonchaning
                     chap tugmasini bosganingizdan keyin ranglardan birini tanlashingiz kerak. Siz faqat quyidagi
-                    ranglarni tanlashingiz mumkin. Rezistorning ranglarini tanlab bo‘lganingizdan keyin quyiroqdagi sariq rangli hisoblamoq tugmasini bosing.</p>
+                    to‘rtburchak shakldagi ranglarni tanlashingiz mumkin. Rezistorning ranglarini tanlab bo‘lganingizdan keyin pastroqdagi sariq rangli hisoblamoq tugmasini bosing.</p>
             </aside>
             <figure><img src="${colorsImage}"
                     alt="Ranglardan qaysi rangni tanlsh kerakligi ko‘rsatilgan.">
@@ -363,6 +365,31 @@ class ResistorCalculator {
         }, 200);
         setTimeout(() => { clearInterval(removeSpinner) }, 800);
     }
+    renderError() {
+        const resistorPicture = document.querySelector(".resistor-image");
+        console.log(resistorPicture.children[0]);
+        const errorIcon = new Image();
+        errorIcon.src = errorIconURL;
+        const cleanSection = this.cleanSection;
+        const errorMessage = this.#errorMessage;
+        const section = resistorPicture.parentElement;
+        resistorPicture.children[0].addEventListener("error", function (e) {
+            section.style.gridTemplateColumns = "1fr";
+            section.style.justifyItems = "center";
+            e.preventDefault();
+            console.log(e);
+            let p = document.createElement("p");
+            p.innerText = errorMessage;
+            p.prepend(errorIcon);
+            cleanSection(resistorPicture);
+            section.append(p);
+        });
+    }
+    cleanSection(element) {
+        const section = element.parentElement;
+        const sectionElements = Array.from(section.children);
+        sectionElements.forEach(el => el.remove());
+    }
     renderResistorCalculator() {
         generalElements.renderGeneralElements();
         this.addTitleToTheHero();
@@ -379,6 +406,7 @@ class ResistorCalculator {
         this.#setAttributeOfTheHR();
         this.#getColorsOfTheInput();
         this.changeThecolorOfTheLines();
+        this.renderError();
     }
 }
 
