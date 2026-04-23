@@ -11,6 +11,9 @@ dist
 .parcel-cache
 src/Images/Content.docx
 src/Images/Architechture.drawio.svg
-./src/Images/Arrow.psd
-./src/ColorPicker.psd
+src/Images/Arrow.psd
+src/ColorPicker.psd
 src/Images/Diagram.drawio.svg
+src/Images/Lines.psd
+src/Images/Resistor.psd
+src/Images/ResistorLittleImages/Untitled-1.psd
