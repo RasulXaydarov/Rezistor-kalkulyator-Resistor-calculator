@@ -1,16 +1,12 @@
 node_modules
-TestChooseColorForInputElement
-4804_sostav_naborov-800x335.jpg
 Content.md
 Jadval-rezistorni-o‘lchaydigan.odt
 resistor_color_codes_2.png
-Rezistor.jpg
-rezistor1.pdf
-rezistor2.pdf
 dist
 .parcel-cache
 src/Images/Content.docx
 src/Images/Architechture.drawio.svg
 src/Images/Diagram.drawio.svg
+src/Styles/StyleData.md
 *.psd
 
