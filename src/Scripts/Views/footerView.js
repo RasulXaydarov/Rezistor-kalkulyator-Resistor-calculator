@@ -8,12 +8,12 @@ class FooterView {
     #addCopyrightToTheFooter() {
         this.#addDate();
         let small = document.createElement("small");
-        small.innerText = `© ${this.#year} designed by Chavandoz`;
+        small.innerText = `© ${this.#year} muallif Chavandoz`;
         this.#parentElement.append(small);
     };
     #addContact() {
         let p = document.createElement("p");
-        p.innerText = "E-mail: Chavandoz@proton.me";
+        p.innerText = "Elektron pochta: Chavandoz@proton.me";
         this.#parentElement.append(p);
     }
     renderFooter() {
