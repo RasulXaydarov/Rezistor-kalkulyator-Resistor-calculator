@@ -112,6 +112,7 @@ footer a img {
 }
 
 footer small {
+    align-self: end;
     display: flex;
     align-items: center;
     margin: 0 auto;
