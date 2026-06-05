@@ -1,7 +1,20 @@
+header {
+    display: grid;
+}
+
 h1 {
     font-size: 5.1rem;
     font-family: "PoppinsBold";
     text-align: center;
+    margin-bottom: 1.6rem;
+}
+
+
+.atom {
+    justify-self: center;
+    height: 22rem;
+    width: auto;
+    opacity: 0.7;
 }
 
 .container {

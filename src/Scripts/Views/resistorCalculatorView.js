@@ -1,4 +1,5 @@
 import GeneralElements from "./generalElementsView";
+import atomImageSrc from "url:../../Images/Atom.gif" with {type: "image/gif"};
 import colorsImage from "url:../../Images/ColorPicker.png" with {type: "image/png"};
 import resistorLittleImageThreeLines from "url:../../Images/ResistorLittleImages/image-resistor-3.png" with {type: "image/png"};
 import resistorLittleImageFourLines from "url:../../Images/ResistorLittleImages/image-resistor-4.png" with {type: "image/png"};
@@ -179,6 +180,14 @@ class ResistorCalculator {
     addTitleToTheHero() {
         const html = `<h1>Resistor liniyalarining rangini tanlang va qarshiligini toping.</h1>`;
         this.#header.insertAdjacentHTML("beforeend", html);
+    }
+    addImageToTheHero() {
+        const atomImage = new Image();
+        atomImage.src = atomImageSrc;
+        atomImage.classList.add("atom");
+        atomImage.alt = "Atomning surati";
+        this.#header.append(atomImage);
+        console.log(atomImage);
     }
     #addSectionHowToUse() {
         const html = `<section class="container" id="how-to">
@@ -393,6 +402,7 @@ class ResistorCalculator {
     renderResistorCalculator() {
         generalElements.renderGeneralElements();
         this.addTitleToTheHero();
+        this.addImageToTheHero();
         this.#addSectionHowToUse();
         this.#addResistorCalculatorSection();
         const sectionResistor = document.querySelector("#resistor-calculator");
