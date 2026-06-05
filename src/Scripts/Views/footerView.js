@@ -13,7 +13,7 @@ class FooterView {
     };
     #addContact() {
         let p = document.createElement("p");
-        p.innerText = "E-meyl: Chavandoz@proton.me";
+        p.innerText = "Elektron pochta: Chavandoz@proton.me";
         this.#parentElement.append(p);
     }
     renderFooter() {
