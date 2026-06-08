@@ -187,7 +187,6 @@ class ResistorCalculator {
         atomImage.classList.add("atom");
         atomImage.alt = "Atomning surati";
         this.#header.append(atomImage);
-        console.log(atomImage);
     }
     #addSectionHowToUse() {
         const html = `<section class="container" id="how-to">
@@ -376,7 +375,6 @@ class ResistorCalculator {
     }
     renderError() {
         const resistorPicture = document.querySelector(".resistor-image");
-        console.log(resistorPicture.children[0]);
         const errorIcon = new Image();
         errorIcon.src = errorIconURL;
         const cleanSection = this.cleanSection;
