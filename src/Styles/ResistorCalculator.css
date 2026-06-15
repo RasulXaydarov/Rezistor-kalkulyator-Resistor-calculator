@@ -34,15 +34,13 @@ section {
 }
 
 h2 {
+    font-size: 4rem;
+    font-family: "PoppinsSemiinsBold";
     margin-bottom: 3.2rem;
 }
 
 section aside {
     max-width: 50%;
-}
-
-section figure {
-    max-width: 54.3rem;
 }
 
 section figure figcaption {

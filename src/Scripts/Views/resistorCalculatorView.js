@@ -384,7 +384,6 @@ class ResistorCalculator {
             section.style.gridTemplateColumns = "1fr";
             section.style.justifyItems = "center";
             e.preventDefault();
-            console.log(e);
             let p = document.createElement("p");
             p.innerText = errorMessage;
             p.prepend(errorIcon);
