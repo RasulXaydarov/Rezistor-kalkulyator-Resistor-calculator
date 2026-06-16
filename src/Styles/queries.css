@@ -8,29 +8,51 @@
         bottom: -14rem;
     }
 
+    menu button img {
+        width: 9rem;
+    }
+
+    section:nth-child(2) h2 {
+        font-size: 5.1rem;
+        padding-bottom: 3.2rem;
+        letter-spacing: -0.4px;
+    }
+
     .line-1 {
-        top: 15.6rem;
+        top: 19.6rem;
         height: calc(4rem + 10.4vw);
-        left: calc(4.8rem + 20.1rem + 5rem + 4.8rem + 3%);
+        left: calc(31.7rem + 5vw);
     }
 
     .line-2 {
-        top: 19rem;
+        top: 23.3rem;
         height: 8.2vw;
-        left: calc(36.9rem + 11.7%);
+        left: calc(32.5rem + 13.6vw);
     }
 
     .line-3 {
-        top: 19rem;
+        top: 23.3rem;
         height: 8.2vw;
         /* left: calc(51.2rem + 4%); */
-        left: calc(43.1rem + 9.6%);
+        left: calc(36.4rem + 13.2vw);
     }
 
     .line-4 {
-        top: 19rem;
+        top: 23.3rem;
         height: 8.2vw;
-        left: calc(46.1rem + 9.6%);
+        left: calc(40.2rem + 13vw);
+    }
+
+    .line-5 {
+        top: 23.3rem;
+        height: 8.2vw;
+        left: calc(16rem + 42vw);
+    }
+
+    .line-6 {
+        top: 19.5rem;
+        left: 85.5rem;
+        left: calc(7.7rem + 52.3vw);
     }
 
     section:nth-child(2) picture,

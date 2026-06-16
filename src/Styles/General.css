@@ -97,6 +97,10 @@ section:nth-child(2) picture.spinner {
     }
 }
 
+section p {
+    line-height: 1.5;
+}
+
 footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
