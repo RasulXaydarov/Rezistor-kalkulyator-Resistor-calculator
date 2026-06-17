@@ -55,8 +55,7 @@
         left: calc(7.7rem + 52.3vw);
     }
 
-    section:nth-child(2) picture,
-    section form {
+    section:nth-child(2) picture {
 
         padding-left: 5rem;
     }
@@ -71,7 +70,10 @@
     }
 
     section form {
-        width: 70.4rem;
+        width: 51vw;
+        padding-left: 4.2vw;
+        padding-top: 0.6rem;
+        gap: 4.4vw;
     }
 }
 
