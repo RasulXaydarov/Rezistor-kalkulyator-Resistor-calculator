@@ -52,7 +52,7 @@
     .line-6 {
         top: 19.5rem;
         left: 85.5rem;
-        left: calc(7.7rem + 52.3vw);
+        left: calc(14rem + 48vw);
     }
 
     section:nth-child(2) picture {
@@ -77,7 +77,14 @@
     }
 }
 
+/* landscape tablet 1092px */
+
 @media(max-width:68.25em) {
+    h1 {
+        font-size: 4rem;
+        line-height: 1.4;
+    }
+
     main section:first-child {
         padding: 2.4rem;
     }
@@ -92,5 +99,48 @@
 
     .arrow {
         max-width: 8.2rem;
+    }
+
+    section:nth-child(2) h2 {
+        letter-spacing: -0.5px;
+        padding-bottom: 2.4rem;
+        font-size: 4rem;
+    }
+
+    .line-1 {
+        top: 18.1rem;
+        height: calc(2rem + 10.6vw);
+    }
+    .line-2 {
+    left: calc(26.3rem + 18.2vw);
+    }
+    .line-3 {
+    left: calc(27rem + 19.9vw);
+    }
+    .line-4 {
+    left: calc(29rem + 20.4vw);
+    }
+
+    .line-1, .line-2, .line-3, .line-4,
+    .line-5, .line-6 {
+        width: 1.5rem;
+    }
+    .line-2,
+    .line-3,
+    .line-4,
+    .line-5 {
+        height: 7.7vw;
+        top: 20.8rem;
+    }
+
+    .line-6 {
+        height: calc(2rem + 10.6vw);
+        top: 18rem;
+        left: calc(16rem + 46.5vw);
+    }
+
+    dialog {
+        font-size: 2rem;
+        padding: 2.4rem;
     }
 }
