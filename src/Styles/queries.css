@@ -92,6 +92,10 @@
     section aside {
         max-width: 61%;
     }
+    section h2 {
+        font-size: 3.2rem;
+        letter-spacing: 0;
+    }
 
     section figure img {
         max-width: 32.4vw;
