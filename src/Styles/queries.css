@@ -85,6 +85,11 @@
         line-height: 1.4;
     }
 
+    .atom {
+        height: auto;
+        width: 36vw;
+    }
+
     main section:first-child {
         padding: 2.4rem;
     }
