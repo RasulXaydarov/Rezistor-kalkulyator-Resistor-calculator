@@ -73,7 +73,7 @@
         width: 51vw;
         padding-left: 4.2vw;
         padding-top: 0.6rem;
-        gap: 4.4vw;
+        gap: 5vw;
     }
 }
 
@@ -141,6 +141,17 @@
 
     dialog {
         font-size: 2rem;
-        padding: 2.4rem;
+        padding: 1.6rem;
     }
+    section form {
+        gap: 4vw;
+    }
+    form button:nth-child(1),
+    form button:nth-child(2),
+    form button:nth-child(3),
+    form button:nth-child(4),
+    form button:nth-child(5),
+    form button:nth-child(6) {
+    width: 3.5vw;
+}
 }
