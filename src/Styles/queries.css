@@ -90,6 +90,10 @@
         width: 36vw;
     }
 
+    .container {
+     margin-bottom: 7.2rem;
+}
+
     main section:first-child {
         padding: 2.4rem;
     }
