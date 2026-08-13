@@ -371,7 +371,7 @@ class ResistorCalculator {
             if (!document.querySelector(".spinner")) return;
             if (document.querySelector("#resistor-calculator .resistor-image img").complete) document.querySelector(".spinner").remove();
         }, 200);
-        setTimeout(() => { clearInterval(removeSpinner) }, 800);
+        setTimeout(() => { clearInterval(removeSpinner) }, 1000);
     }
     renderError() {
         const resistorPicture = document.querySelector(".resistor-image");
