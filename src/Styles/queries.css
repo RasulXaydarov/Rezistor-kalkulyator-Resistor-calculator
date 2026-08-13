@@ -91,8 +91,8 @@
     }
 
     .container {
-     margin-bottom: 7.2rem;
-}
+        margin-bottom: 7.2rem;
+    }
 
     main section:first-child {
         padding: 2.4rem;
@@ -101,6 +101,7 @@
     section aside {
         max-width: 61%;
     }
+
     section h2 {
         font-size: 3.2rem;
         letter-spacing: 0;
@@ -124,20 +125,28 @@
         top: 18.1rem;
         height: calc(2rem + 10.6vw);
     }
+
     .line-2 {
-    left: calc(26.3rem + 18.2vw);
-    }
-    .line-3 {
-    left: calc(27rem + 19.9vw);
-    }
-    .line-4 {
-    left: calc(29rem + 20.4vw);
+        left: calc(26.3rem + 18.2vw);
     }
 
-    .line-1, .line-2, .line-3, .line-4,
-    .line-5, .line-6 {
+    .line-3 {
+        left: calc(27rem + 19.9vw);
+    }
+
+    .line-4 {
+        left: calc(29rem + 20.4vw);
+    }
+
+    .line-1,
+    .line-2,
+    .line-3,
+    .line-4,
+    .line-5,
+    .line-6 {
         width: 1.5rem;
     }
+
     .line-2,
     .line-3,
     .line-4,
@@ -151,20 +160,29 @@
         top: 18rem;
         left: calc(16rem + 46.5vw);
     }
+     section:nth-child(2) picture[data-line="lines"] {
+        transform: translateY(-5.8rem);
+    }
+
+    section:nth-child(2) picture[data-line="lines"] img {
+        max-width: 62%;
+    }
 
     dialog {
         font-size: 2rem;
         padding: 1.6rem;
     }
+
     section form {
         gap: 4vw;
     }
+
     form button:nth-child(1),
     form button:nth-child(2),
     form button:nth-child(3),
     form button:nth-child(4),
     form button:nth-child(5),
     form button:nth-child(6) {
-    width: 3.5vw;
-}
+        width: 3.5vw;
+    }
 }
