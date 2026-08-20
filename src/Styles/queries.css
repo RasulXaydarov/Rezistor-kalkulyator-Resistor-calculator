@@ -160,7 +160,8 @@
         top: 18rem;
         left: calc(16rem + 46.5vw);
     }
-     section:nth-child(2) picture[data-line="lines"] {
+
+    section:nth-child(2) picture[data-line="lines"] {
         transform: translateY(-5.8rem);
     }
 
@@ -184,5 +185,17 @@
     form button:nth-child(5),
     form button:nth-child(6) {
         width: 3.5vw;
+    }
+}
+
+/* landscape tablet 760px */
+@media(max-width:47.5em) {
+    .arrow {
+        max-width: 7.2rem;
+    }
+
+    section:nth-child(2) {
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
     }
 }
