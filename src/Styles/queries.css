@@ -190,6 +190,25 @@
 
 /* landscape tablet 760px */
 @media(max-width:47.5em) {
+
+     html {
+        font-size: 50%;
+    }
+
+nav {
+    padding: 1.2rem;
+}
+
+ menu button {
+ font-size: 2rem;
+ padding: 0.4rem 0.8rem;
+ font-size: 1.6rem;
+}
+
+menu button image {
+    width: 6rem;
+}
+
     .arrow {
         max-width: 7.2rem;
     }
@@ -197,5 +216,27 @@
     section:nth-child(2) {
         padding-left: 2.4rem;
         padding-right: 2.4rem;
+    }
+
+    .line-1 {
+        top: 19.1rem;
+    }
+
+    .line-2,
+    .line-3,
+    .line-4,
+    .line-5 {
+        height: 7.7vw;
+        top: 21.8rem;
+    }
+
+    .line-6 {
+        height: calc(2rem + 10.6vw);
+        top: 19rem;
+        left: calc(16rem + 46.5vw);
+    }
+
+    section form {
+        gap: 2rem;
     }
 }
