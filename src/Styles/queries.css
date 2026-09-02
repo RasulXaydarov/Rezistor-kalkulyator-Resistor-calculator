@@ -220,8 +220,8 @@ menu button image {
     }
 
     .line-1 {
-        top: 25.5rem;
-        height: calc(0.6rem + 9.6vw);
+        top: 25.4rem;
+        height: calc(0.6rem + 9.8vw);
         left: calc(29rem + 5.3vw);
     }
 
@@ -229,17 +229,28 @@ menu button image {
     .line-3,
     .line-4,
     .line-5 {
-        height: 7.7vw;
+        height: 6.6vw;
         top: 27rem;
     }
 
     .line-1, .line-2, .line-3, .line-4, .line-5, .line-6 {
-        width: 2vw;
+        width: 1.5vw;
     }
 
+     .line-2 {
+        left: calc(25.3rem + 18.2vw);
+    }
+
+    .line-3 {
+        left: calc(26rem + 19.9vw);
+    }
+
+ .line-4 {
+        left: calc(28rem + 20.9vw);
+    }
     .line-6 {
-        height: calc(2rem + 10.6vw);
-        top: 19rem;
+        height: calc(0.6rem + 9.9vw);
+        top: 25.4rem;
         left: calc(16rem + 46.5vw);
     }
 
