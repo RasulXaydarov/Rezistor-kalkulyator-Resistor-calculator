@@ -200,13 +200,23 @@ nav {
     padding: 1.2rem;
 }
 
- menu button {
- font-size: 2rem;
- padding: 0.4rem 0.8rem;
- font-size: 1.6rem;
+section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
 }
 
-menu button image {
+section menu {
+    flex-direction: row;
+    max-width: 80vw;
+    align-self: center;
+}
+ menu button {
+    padding: 0.4rem 0.8rem;
+ font-size: 1.6rem;
+
+}
+
+menu button img {
     width: 6rem;
 }
 
@@ -219,6 +229,14 @@ menu button image {
         padding-right: 2.4rem;
     }
 
+    section:nth-child(2) picture {
+          display: flex;
+         justify-content: center;
+    }
+        
+     section:nth-child(2) picture img { 
+       max-width:80%;
+        }
     .line-1 {
         top: 25.4rem;
         height: calc(0.6rem + 9.8vw);
@@ -254,6 +272,10 @@ menu button image {
         left: calc(16rem + 46.5vw);
     }
 
+    dialog {
+        position: absolute;
+        top: 36rem;
+    }
     section form {
         gap: 2rem;
     }
