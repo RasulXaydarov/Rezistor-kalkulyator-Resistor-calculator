@@ -218,7 +218,7 @@ section menu {
 }
 
 menu button img {
-    width: 6rem;
+    width: 6vw;
 }
 
     .arrow {
@@ -234,9 +234,9 @@ menu button img {
        max-width:80%;
         }
     .line-1 {
-        top: 25.4rem;
-        height: calc(0.6rem + 9.8vw);
-        left: calc(29rem + 5.3vw);
+        top: 26.3rem;
+        height: calc(3.4rem + 16.4vw);
+        left: calc(6.8rem + 15vw);
     }
 
     .line-2,
@@ -248,7 +248,7 @@ menu button img {
     }
 
     .line-1, .line-2, .line-3, .line-4, .line-5, .line-6 {
-        width: 1.5vw;
+        width: 2.5vw;
     }
 
      .line-2 {
