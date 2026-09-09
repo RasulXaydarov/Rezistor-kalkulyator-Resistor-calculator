@@ -252,20 +252,24 @@ menu button img {
     }
 
      .line-2 {
-        left: calc(6.1rem + 30vw);
+        left: calc(6.5rem + 31vw);
     }
 
     .line-3 {
-        left: calc(8rem + 31vw);
+        left: calc(8.5rem + 32vw);
     }
 
  .line-4 {
-        left: calc(28rem + 20.9vw);
+        left: calc(12rem + 31.2vw);
+    }
+    .line-5 {
+        left: calc(7.1rem + 53vw);
     }
     .line-6 {
         height: calc(0.6rem + 9.9vw);
         top: 25.4rem;
-        left: calc(16rem + 46.5vw);
+        left: calc(1.6rem + 70.5vw);
+        height: 21vw;
     }
 
     dialog {
