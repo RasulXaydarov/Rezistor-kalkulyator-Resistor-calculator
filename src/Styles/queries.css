@@ -243,8 +243,8 @@ menu button img {
     .line-3,
     .line-4,
     .line-5 {
-        height: 6.6vw;
-        top: 27rem;
+        height: 13.2vw;
+        top: 29.1rem;
     }
 
     .line-1, .line-2, .line-3, .line-4, .line-5, .line-6 {
@@ -252,11 +252,11 @@ menu button img {
     }
 
      .line-2 {
-        left: calc(25.3rem + 18.2vw);
+        left: calc(6.1rem + 30vw);
     }
 
     .line-3 {
-        left: calc(26rem + 19.9vw);
+        left: calc(8rem + 31vw);
     }
 
  .line-4 {
@@ -272,6 +272,16 @@ menu button img {
         position: absolute;
         top: 36rem;
     }
+
+    section:nth-child(2) picture[data-line="lines"] {
+        padding-left: 4.5rem;
+        transform: translateY(-2.8rem);
+    }
+
+    section:nth-child(2) picture[data-line="lines"] img { 
+        max-width: 80%;
+    }
+
     section form {
         gap: 2rem;
     }
