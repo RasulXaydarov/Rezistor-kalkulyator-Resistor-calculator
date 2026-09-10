@@ -203,8 +203,7 @@ nav {
 section:nth-child(2) {
     display: flex;
     flex-direction: column;
-    padding-left: 1.6rem;
-    padding-right: 1.6rem;
+    padding: 0;
 }
 
 section menu {
@@ -234,7 +233,7 @@ menu button img {
        max-width:80%;
         }
     .line-1 {
-        top: 26.2rem;
+        top: 21.5rem;
         height: calc(21vw);
         left: calc(6.8rem + 15vw);
     }
@@ -267,7 +266,7 @@ menu button img {
     }
     .line-6 {
         height: calc(0.6rem + 9.9vw);
-        top: 25.4rem;
+        top: 26.1rem;
         left: calc(1.6rem + 70.5vw);
         height: 21vw;
     }
@@ -287,6 +286,11 @@ menu button img {
     }
 
     section form {
-        gap: 2rem;
+        gap: 6rem;
+        width: 74vw;
+        padding-left: 0;
+        padding-top: 3.6rem;
+        background-color: green;
     }
+   
 }
