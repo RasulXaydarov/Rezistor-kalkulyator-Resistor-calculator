@@ -271,15 +271,15 @@ menu button img {
     }
 
      .line-2 {
-        left: calc(6.5rem + 31vw);
+        left: calc(4.5rem + 32.5vw);
     }
 
     .line-3 {
-        left: calc(8.5rem + 32vw);
+        left: calc(6rem + 34vw);
     }
 
  .line-4 {
-        left: calc(12rem + 31.2vw);
+        left: calc(7rem + 36vw);
     }
     .line-5 {
         left: calc(7.1rem + 53vw);
@@ -293,7 +293,7 @@ menu button img {
 
     dialog {
         position: absolute;
-        top: 36rem;
+        top: 28rem;
     }
 
     section:nth-child(2) picture[data-line="lines"] {
@@ -306,11 +306,19 @@ menu button img {
     }
 
     section form {
-        gap: 6rem;
-        width: 74vw;
+        gap: 10vw;
+        width: 91vw;
         padding-left: 0;
         padding-top: 3.6rem;
-        background-color: green;
+    }
+
+    form button:nth-child(1),
+    form button:nth-child(2),
+    form button:nth-child(3),
+    form button:nth-child(4),
+    form button:nth-child(5),
+    form button:nth-child(6) {
+        width: 6vw;
     }
 
    
