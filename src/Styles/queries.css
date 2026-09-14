@@ -262,7 +262,7 @@ menu button img {
     .line-3,
     .line-4,
     .line-5 {
-        height: calc(0.5rem + 13.4vw);
+        height: 14vw;
         top: 18.1rem;
     }
 
@@ -306,9 +306,11 @@ menu button img {
     }
 
     section form {
-        gap: 10vw;
+        display:grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 9vw;
         width: 91vw;
-        padding-left: 0;
+        padding-left: 3.6rem;
         padding-top: 3.6rem;
     }
 
@@ -319,6 +321,12 @@ menu button img {
     form button:nth-child(5),
     form button:nth-child(6) {
         width: 6vw;
+    }
+
+    form button:last-child {
+        grid-row: 2/3;
+        grid-column: 1/-1;
+        justify-self:center;
     }
 
    
