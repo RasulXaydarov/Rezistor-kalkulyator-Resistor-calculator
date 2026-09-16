@@ -200,6 +200,10 @@
         font-size: 2rem;
     }
 
+    header {
+        padding: 0.8rem;
+    }
+
 nav {
     padding: 0;
 }
@@ -210,6 +214,8 @@ nav a {
 }
 h1 {
     font-size: 3.2rem;
+    line-height: 1.5;
+    letter-spacing: 0;
 }
 
 section p {
@@ -334,4 +340,50 @@ menu button img {
     font-size: 2rem;
 }
 
+}
+
+
+/* Mobile phone  480px */
+@media(max-width: 30em) {
+
+
+    h1 {
+    font-size: 2.5rem;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    line-height: 1.6;
+}
+
+section p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+section:nth-child(2) h2 {
+    line-height: 1.5;
+}
+ 
+menu {
+    max-width: 95vw;
+    padding-bottom: 2.4rem
+}
+
+ menu button {
+     padding: 0.4rem;
+     font-size: 1.6rem;
+     flex-direction: column;
+    }
+    menu button img {
+        width: 11vw;
+    }
+
+    section:nth-child(2) picture {
+          padding-left:0;
+    }
+    
+dialog {
+    top: 32rem;
+}
 }
