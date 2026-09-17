@@ -30,6 +30,18 @@ body {
     color: #333;
 }
 
+.skip-link { 
+    position: absolute; 
+    top: -5rem; left: 0; 
+    background: #fdefbd; 
+    color: white; 
+    padding: 8px; 
+    z-index: 100; 
+    border-bottom-right-radius: 1.2rem;
+} 
+.skip-link:focus { top: 0; 
+transition: top 0.3s ease-in;
+} 
 
 nav {
     display: flex;
