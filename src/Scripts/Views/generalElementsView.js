@@ -9,6 +9,7 @@ class GeneralElements {
         this.#navigation = navigation;
         let footer = new FooterView();
         navigation.renderNavigation();
+        navigation.addButttonForMobileNavigation();
         footer.renderFooter();
     }
     addScrollBehavior() {
