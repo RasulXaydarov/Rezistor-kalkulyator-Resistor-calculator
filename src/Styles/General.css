@@ -6,6 +6,7 @@
 
 html {
     font-size: 62.5%;
+     overflow-x: hidden;
 }
 
 @font-face {
@@ -28,6 +29,7 @@ body {
     font-size: 2.5rem;
     font-family: "Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
+    overflow-x: hidden;
 }
 
 .skip-link { 
@@ -87,6 +89,25 @@ nav ul a {
     display: inline-block;
     font-size: inherit;
     margin: inherit;
+}
+
+/* Mobile navigation */
+.btn-mobile-nav {
+    border:none;
+    display: none;
+    justify-self: end;
+    cursor: pointer;
+    background-color: unset;
+}
+.btn-mobile-nav img{ 
+    height: auto;
+    width: 4.8rem;
+}
+img[data-button-image="navigation"] {
+    
+}
+img[data-button-image="close"] {
+display: none;
 }
 
 section:nth-child(2) picture.spinner {
