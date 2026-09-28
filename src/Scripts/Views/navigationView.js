@@ -32,13 +32,19 @@ header.classList.toggle("nav-open");
     }
     addScrollBehaviorToTheNavigation() {
         let navLinks = document.querySelector("nav ul");
+        let header = this.#header;
         navLinks.addEventListener("click", function (e) {
             e.preventDefault();
-
             let link = e.target;
             if (link.tagName !== "A") return;
             let id = link.getAttribute("href");
-            document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+            if(id === "#") window.scrollIntoView({
+                top:0,
+                behavior: "smooth"
+            })
+            if (id !== "#" && id.startsWith("#"))
+                document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+            if (id !== "#" && id.startsWith("#")) header.classList.remove("nav-open");
         });
     }
 }

@@ -123,6 +123,13 @@ menu .active {
     transition: all 300ms ease-in-out;
 }
 
+menu .active:focus{
+   box-shadow: 0 0 0 0.8rem rgba(50, 40, 7, 0.5);
+}
+
+menu *:focus {
+    z-index:50;
+}
 menu button img {
     width: 10rem;
 }
