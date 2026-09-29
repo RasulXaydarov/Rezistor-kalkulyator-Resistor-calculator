@@ -389,11 +389,19 @@ menu button img {
 /** Mobile phone  480px **/
 @media(max-width: 30em) {
 
-
-
-
+header {
+    margin-bottom: 6.4rem;
+}
     h1 {
     font-size: 2.5rem;
+}
+
+main section:first-child {
+        padding: 0.8rem;
+    }
+
+section figure figcaption {
+    padding: 0;
 }
 
 section h2 {
@@ -430,5 +438,9 @@ menu {
     
 dialog {
     top: 32rem;
+}
+
+footer {
+    padding: 1.2rem;
 }
 }
