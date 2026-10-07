@@ -378,9 +378,16 @@ menu button img {
         justify-self:center;
     }
 
+    footer {
+        grid-template-columns: 1fr 1fr;
+    }
    
     footer a[class="logo"] {
     font-size: 2rem;
+}
+footer small {
+    grid-row: 2/3;
+    grid-column: 1/-1;
 }
 
 }
@@ -415,6 +422,7 @@ section p {
 }
 
 section:nth-child(2) h2 {
+    font-size: 2.5rem;
     line-height: 1.5;
 }
  
@@ -432,10 +440,34 @@ menu {
         width: 11vw;
     }
 
-    section:nth-child(2) picture {
+  .line-1 {
+	top: 24.6rem;
+	height: 23vw;
+	left: calc(18vw);
+}
+
+.line-2,
+    .line-3,
+    .line-4,
+    .line-5 {
+        height: 15vw;
+        top: 27.1rem;
+    }
+
+    .line-2 {
+	top: 27.1rem;
+	height: 15vw;
+	left: calc(34.5vw);
+}
+
+    section:nth-child(2) picture, section:nth-child(2) picture[data-line="lines"] {
           padding-left:0;
     }
-    
+
+     section form {
+    padding-left: 0; 
+    }
+          
 dialog {
     top: 32rem;
 }
