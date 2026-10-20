@@ -370,8 +370,9 @@ class ResistorCalculator {
         let removeSpinner = setInterval(() => {
             if (!document.querySelector(".spinner")) return;
             if (document.querySelector("#resistor-calculator .resistor-image img").complete) document.querySelector(".spinner").remove();
-        }, 200);
-        setTimeout(() => { clearInterval(removeSpinner) }, 1000);
+        }, 300);
+        setTimeout(() => { clearInterval(removeSpinner) }, 1500);
+
     }
     renderError() {
         const resistorPicture = document.querySelector(".resistor-image");

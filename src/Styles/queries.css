@@ -441,8 +441,8 @@ menu {
     }
 
   .line-1 {
-	top: 24.6rem;
-	height: 23vw;
+	top: 18.8rem;
+	height: 23.2vw;
 	left: calc(18vw);
 }
 
@@ -451,14 +451,27 @@ menu {
     .line-4,
     .line-5 {
         height: 15vw;
-        top: 27.1rem;
+        top: 20.8rem;
     }
 
     .line-2 {
-	top: 27.1rem;
-	height: 15vw;
-	left: calc(34.5vw);
+	left: 34.5vw;
 }
+    .line-3 {
+	left: 38.5vw;
+}
+    .line-4 {
+	left: 42.5vw;
+}
+    .line-5 {
+	left: 63vw;
+}
+
+  .line-6 {
+        height: 23.4vw;
+        top: 18.6rem;
+        left: 72.5vw;
+    }
 
     section:nth-child(2) picture, section:nth-child(2) picture[data-line="lines"] {
           padding-left:0;
