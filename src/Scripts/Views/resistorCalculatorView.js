@@ -18,7 +18,6 @@ const imageLinesThreeURL = new URL("../../Images/Lines-3.png", import.meta.url);
 const imageLinesFourURL = new URL("../../Images/Lines-4.png", import.meta.url);
 const imageLinesFiveURL = new URL("../../Images/Lines-5.png", import.meta.url);
 const imageLinesSixURL = new URL("../../Images/Lines-6.png", import.meta.url);
-//  Switch operator for converting color to the named color 
 function changeTheColorToTheNamedColor(color) {
     let namedColor;
     switch (color) {
