@@ -366,6 +366,7 @@ class ResistorCalculator {
             line.click();
         });
     };
+    
     removeSpinner() {
         let removeSpinner = setInterval(() => {
             if (!document.querySelector(".spinner")) return;
