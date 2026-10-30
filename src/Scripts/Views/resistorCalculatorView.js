@@ -96,11 +96,11 @@ function calculateTheResistor(data, dataForTheColors) {
     };
 }
 function showTheResultInTheDialog(dialog, data) {
-    dialog.innerText = `Qarshilik ${data.resistance} Om`;
+    dialog.innerText = `Qarşilik ${data.resistance} Om`;
 
-    if (data.thePossibleMistake) dialog.innerText = `Qarshilik ${data.resistance} Om va mumkin bo‘lgan xatoligi ${data.thePossibleMistake}`;
+    if (data.thePossibleMistake) dialog.innerText = `Qarşilik ${data.resistance} Om va mumkin bölgan xatoligi ${data.thePossibleMistake}`;
 
-    if (data.thePossibleMistake && data.theCoefficientOfTheTemperature) dialog.innerText = `Qarshilik ${data.resistance} Om, mumkin bo‘lgan xatoligi ${data.thePossibleMistake}, temperatura koeffitsiyenti ${data.theCoefficientOfTheTemperature}`;
+    if (data.thePossibleMistake && data.theCoefficientOfTheTemperature) dialog.innerText = `Qarşilik ${data.resistance} Om, mumkin bölgan xatoligi ${data.thePossibleMistake}, temperatura koeffitsiyenti ${data.theCoefficientOfTheTemperature}`;
 }
 
 const generalElements = new GeneralElements();
@@ -163,7 +163,7 @@ class ResistorCalculator {
     }
     _dataForColorsOfTheResistor;
     _result;
-    #errorMessage = "Kechirasiz xatolik bo‘ldi. Rezistorni rasmi kelmadi";
+    #errorMessage = "Kechirasiz xatolik böldi. Rezistorni rasmi kelmadi";
     constructor() {
         this.theListOfTheResistanceForTheFirstLine.black = "";
         this.theListForNumberOfZero.gold = -1;
@@ -178,7 +178,7 @@ class ResistorCalculator {
         }
     }
     addTitleToTheHero() {
-        const html = `<h1>Resistor liniyalarining rangini tanlang va qarshiligini toping.</h1>`;
+        const html = `<h1>Resistor liniyalarining rangini tanlang va qarşiligini toping.</h1>`;
         this.#header.insertAdjacentHTML("beforeend", html);
     }
     addImageToTheHero() {
@@ -191,14 +191,14 @@ class ResistorCalculator {
     #addSectionHowToUse() {
         const html = `<section class="container" id="how-to">
             <aside>
-                <h2>Qanday qilib resistorning qarshiligi topiladi.</h2>
-                <p>Siz rezistorning qarshiligini topish uchun yo rezistor pastidagi to‘rtburchak shaklni bosishingiz
-                    kerak, yo rangli liniyalardan birini tanlashingiz kerak. Rangli liniyani tanlab uni sichqonchaning
-                    chap tugmasini bosganingizdan keyin ranglardan birini tanlashingiz kerak. Siz faqat quyidagi
-                    to‘rtburchak shakldagi ranglarni tanlashingiz mumkin. Rezistorning ranglarini tanlab bo‘lganingizdan keyin pastroqdagi sariq rangli hisoblamoq tugmasini bosing.</p>
+                <h2>Qanday qilib resistorning qarşiligi topiladi.</h2>
+                <p>Siz rezistorning qarşiligini topiş uçun yo rezistor pastidagi törtburçak şaklni bosişingiz
+                    kerak, yo rangli liniyalardan birini tanlaşingiz kerak. Rangli liniyani tanlab uni siçqonçaning
+                    çap tugmasini bosganingizdan keyin ranglardan birini tanlaşingiz kerak. Siz faqat quyidagi
+                    törtburçak şakldagi ranglarni tanlaşingiz mumkin. Rezistorning ranglarini tanlab bölganingizdan keyin pastroqdagi sariq rangli hisoblamoq tugmasini bosing.</p>
             </aside>
             <figure><img src="${colorsImage}"
-                    alt="Ranglardan qaysi rangni tanlsh kerakligi ko‘rsatilgan.">
+                    alt="Ranglardan qaysi rangni tanlş kerakligi körsatilgan.">
                 <figcaption>Rezistorning liniyasining ranglari</figcaption>
             </figure>
         </section>`;
@@ -211,12 +211,12 @@ class ResistorCalculator {
     }
     #addResistorCalculatorSection() {
         const html = `<section class="container" id="resistor-calculator">
-            <h2>Qarshilikni o‘lchaydigan kalkulyator</h2>
+            <h2>Qarşilikni ölçaydigan kalkulyator</h2>
              <menu>
-                 <button data-number="3"><img src="${resistorLittleImageThreeLines}">3 ta chiziq</button>
-                 <button data-number="4"><img src="${resistorLittleImageFourLines}">4 ta chiziq</button>
-                 <button data-number="5"><img src="${resistorLittleImageFiveLines}">5 ta chiziq</button>
-                 <button data-number="6"><img src="${resistorLittleImageSixLines}">6 ta chiziq</button>
+                 <button data-number="3"><img src="${resistorLittleImageThreeLines}">3 ta çiziq</button>
+                 <button data-number="4"><img src="${resistorLittleImageFourLines}">4 ta çiziq</button>
+                 <button data-number="5"><img src="${resistorLittleImageFiveLines}">5 ta çiziq</button>
+                 <button data-number="6"><img src="${resistorLittleImageSixLines}">6 ta çiziq</button>
              </menu> 
                 <rectangle class="line-1" data-line="line-1"></rectangle>
                 <rectangle class="line-2" data-line="line-2"></rectangle>
@@ -224,7 +224,7 @@ class ResistorCalculator {
                 <rectangle class="line-4" data-line="line-4"></rectangle>
                 <rectangle class="line-5" data-line="line-5"></rectangle>
                 <rectangle class="line-6" data-line="line-6"></rectangle>
-                <picture class="resistor-image"><img src="${resistorNoLines}" alt="Rezistorni o‘lchaydigan kalkulyatorning rasmi"></picture>
+                <picture class="resistor-image"><img src="${resistorNoLines}" alt="Rezistorni ölçaydigan kalkulyatorning rasmi"></picture>
                 <picture data-line="lines">
                     <img src="${imageLinesThreeURL}" alt="Rezistorning rasmi" data-number="3">
                 </picture>
