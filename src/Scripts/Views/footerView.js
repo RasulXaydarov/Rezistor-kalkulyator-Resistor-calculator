@@ -8,16 +8,16 @@ class FooterView {
     #addCopyrightToTheFooter() {
         this.#addDate();
         let small = document.createElement("small");
-        small.innerText = `© ${this.#year} muallif Chavandoz`;
+        small.innerText = `© ${this.#year} muallif Çavandoz`;
         this.#parentElement.append(small);
     };
     #addContact() {
         let p = document.createElement("p");
-        p.innerText = "Elektron pochta: Chavandoz@proton.me";
+        p.innerText = "Elektron poçta: Çavandoz@proton.me";
         this.#parentElement.append(p);
     }
     renderFooter() {
-        let logo = `<a class="logo" href="#"><img src="${logoImage}" alt="Logotip surati">Qarshilik</a>`;
+        let logo = `<a class="logo" href="#"><img src="${logoImage}" alt="Logotip surati">Qarşilik</a>`;
         this.#parentElement.insertAdjacentHTML("afterbegin", logo);
         this.#addCopyrightToTheFooter();
         this.#addContact();
