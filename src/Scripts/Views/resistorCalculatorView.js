@@ -234,7 +234,7 @@ class ResistorCalculator {
                     <button data-jscolor="{preset:'numberOfZeros', onChange: 'change(this)'}" data-color="color-4" data-number=\"4\"></button>
                     <button data-jscolor="{preset: 'mistake', onChange: 'change(this)'}" data-color="color-5" data-number=\"5\"></button>
                     <button data-jscolor="{preset:'theCoeffitientOfTheTemperature', onChange: 'change(this)'}" data-color="color-6" data-number=\"6\"></button>
-                    <button>Qarshilik hisoblamoq</button>
+                    <button>Qarşilik hisoblamoq</button>
                 </form>
                 <dialog>Hisobning natijasi</dialog>
         </section>`;
