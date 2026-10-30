@@ -1,7 +1,7 @@
 {
   "name": "rezistor-uchun-kalkulyator",
   "version": "1.0.0",
-  "description": "Qarshilikni o‘lchash uchun veb ilova. Rezistorning liniyasining  ranglariga qarab uning qarshiligini aniqlash uchun foydalaniladi.",
+  "description": "Qarşilikni ölchasş uçun veb ilova. Rezistorning liniyasining  ranglariga qarab uning qarşiligini aniqlaş uçun foydalaniladi.",
   "homepage": "https://github.com/RasulXaydarov/Rezistor-kalkulyator#readme",
   "bugs": {
     "url": "https://github.com/RasulXaydarov/Rezistor-kalkulyator/issues"
