@@ -5,8 +5,8 @@ export class Navigation {
     #header = document.querySelector("header");
     navigationButton;
     renderNavigation() {
-        let html = `<nav><a href="#"><img src="${logoImage}">Qarshilik</a><ul class="links"><li><a href="#how-to">Foydalanish usuli</a></li><li><a
-                href="#resistor-calculator">Qarshilik kalkulyatori</a></li></ul></nav>`;
+        let html = `<nav><a href="#"><img src="${logoImage}">Qarşilik</a><ul class="links"><li><a href="#how-to">Foydalaniş usuli</a></li><li><a
+                href="#resistor-calculator">Qarşilik kalkulyatori</a></li></ul></nav>`;
         this.#header.insertAdjacentHTML("afterbegin", html);
     }
     addButttonForMobileNavigation() {

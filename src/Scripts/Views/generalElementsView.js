@@ -22,12 +22,12 @@ class GeneralElements {
         picture.classList.add("spinner");
         const image = new Image();
         image.src = spinnerImage;
-        image.alt = "Sekin ma'lumotlar qabul qilayotganligi tufayli hali tayyor bo‘lmaganini bildirish uchun aylanayotgan tasavvuriy surat";
+        image.alt = "Sekin ma'lumotlar qabul qilayotganligi tufayli hali tayyor bölmaganini bildiriş uçun aylanayotgan tasavvuriy surat";
         picture.appendChild(image);
         const markup = `
         <picture class="spinner">
             <img src="${spinnerImage}" 
-            alt="Sekin ma'lumotlar qabul qilayotganligi tufayli hali tayyor bo‘lmaganini bildirish uchun aylanayotgan tasavvuriy surat">
+            alt="Sekin ma'lumotlar qabul qilayotganligi tufayli hali tayyor bölmaganini bildiriş uçun aylanayotgan tasavvuriy surat">
         </picture>`;
         h2.after(picture);
     }
